@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Create a four-year plan </title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        position: relative;
+    }
+
+    .red-bar {
+        background-color: #8B0015;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .school-logo {
+        margin-left: 20px;
+        height: 50px;
+    }
+
+    .school-logo2 {
+        margin-left: 40px;
+        margin-left: 0;
+        height: 30px;
+    }
+
+    .text-main {
+        margin-left: 40px;
+        color: darkblue;
+    }
+
+    p {
+      margin: 0;
+      color: black;
+    }
+    
+	.text-bar {
+	   
+	    bottom: 0;
+	    right: 0;
+      width: 100%;
+	    background-color: #F5F5DC;
+	    padding: 10px;
+	    
+	    color: black;
+	    text-align: right;
+	    font-size: 14px;
+	    color: #333;
+      margin-left: auto;
+	}
+	
+	
+
+	.beige-bar {
+	    background-color: #F5F5DC;
+	    height: 200px;
+	    bottom: 0;
+	    width: 100%;
+	    display: flex;
+	    justify-content: flex-start;
+	    align-items: center;
+	    padding-left: 20px;
+      z-index: 999; 
+
+	}
+	
+	.labeling {
+	    margin-bottom: 120px;
+	    margin-left: 40px;
+	}
+
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  width:40%;
+  background-color: #f1f1f1;
+}
+
+
+.container {
+      display: flex;
+    }
+
+    .year {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin: 10px;
+      min-height: 200px;
+    }
+
+    .class-box {
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin: 5px;
+      width : 100px;
+      cursor: move;
+    }
+
+
+    .box {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    width: 100px; 
+    height: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    cursor: text;
+  }
+
+  .box-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .box-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+
+ 
+  .result-box {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .remove-item {
+    cursor: pointer;
+    float: right;
+    color: red;
+  }
+
+  .left-term {
+    float: left;
+    clear: left;
+    margin-right: 0;
+    margin-left: 300px;
+  }
+
+  .right-term {
+    float: right;
+    clear: right;
+    margin-left: 0;
+    margin-right: 300px;
+  }
+
+  
+
+
+
+</style>
+</head>
+<body>
+
+<div class="red-bar">
+    <img src="ua_wordmark_line_logo_white_rgb.min.svg" alt="UA Logo" class="logo">
+</div>
+
+<img src="SchoolOfInformation.png" alt="School of Information Logo" class="school-logo">
+<p class="text-main"> Create a four-year plan </p>
+<p class="text-main">Course recommendation | Resources Link</p>
+<!-- 
+ <label class="labeling" for="termsDropdown">Select a Term:</label>
+  <select id="termsDropdown" name="terms">
+    <option value="term1">Term 1</option>
+    <option value="term2">Term 2</option>
+    <option value="term3">Term 3</option>
+  </select> -->
+
+
+<!--  8 boxes to represent each year  and button to add another box   + ( add delelt or rest)-->
+
+
+<!-- <h2> Four Year Plan</h2> -->
+
+<script>
+  function addCustomItem(resultBoxId) {
+    var additionalItemInput = document.getElementById(resultBoxId).querySelector(".additionalItem");
+    var additionalItemValue = additionalItemInput.value.trim();
+    if (additionalItemValue !== "") {
+      var resultBox = document.getElementById(resultBoxId);
+      resultBox.innerHTML += "<div><span>" + additionalItemValue + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
+      additionalItemInput.value = "";
+    }
+  }
+
+  function removeItem(item) {
+    item.parentNode.removeChild(item);
+  }
+  function addCustomItem(resultBoxId) {
+    var resultBox = document.getElementById(resultBoxId);
+    var additionalItemInput = resultBox.parentNode.querySelector(".additionalItem");
+    var additionalItemValue = additionalItemInput.value.trim();
+    if (additionalItemValue !== "") {
+      resultBox.innerHTML += "<div><span>" + additionalItemValue + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
+      additionalItemInput.value = "";
+    }
+}
+
+</script>
+
+<div class="left-term">
+  <h2>First semster</h2>
+  <hr style="border-top: 2px solid #701d1d;">
+  <div class="result-box" id="resultBox1"></div>
+  <div>
+    <input type="text" class="additionalItem" placeholder="Type here..">
+    <button onclick="addCustomItem('resultBox1')">Add Course</button>
+  </div>
+</div>
+
+<div class="right-term">
+  <h2>Second Semster</h2>
+  <hr style="border-top: 2px solid #701d1d;">
+  <div class="result-box" id="resultBox2"></div>
+  <div>
+    <input type="text" class="additionalItem" placeholder="Type here..">
+    <button onclick="addCustomItem('resultBox2')">Add Course</button>
+  </div>
+</div>
+
+
+<div class="left-term">
+  <h2>Third Semester</h2>
+  <hr style="border-top: 2px solid #701d1d;">
+  <div class="result-box" id="resultBox3"></div>
+  <div>
+    <input type="text" class="additionalItem" placeholder="Type here..">
+    <button onclick="addCustomItem('resultBox3')">Add Course</button>
+  </div>
+</div>
+
+<div class="right-term">
+  <h2>Fourth Semester</h2>
+  <hr style="border-top: 2px solid #701d1d;">
+  <div class="result-box" id="resultBox4"></div>
+  <div>
+    <input type="text" class="additionalItem" placeholder="Type here..">
+    <button onclick="addCustomItem('resultBox4')">Add Course</button>
+  </div>
+</div>
+
+<script>
+  function addCustomItem(resultBoxId) {
+    var resultBox = document.getElementById(resultBoxId);
+    var additionalItemInput = resultBox.parentNode.querySelector(".additionalItem");
+    var additionalItemValue = additionalItemInput.value.trim();
+    if (additionalItemValue !== "") {
+      resultBox.innerHTML += "<div><span>" + additionalItemValue + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
+      additionalItemInput.value = "";
+    }
+  }
+
+  function removeItem(item) {
+    item.parentNode.removeChild(item);
+  }
+</script>
+
+
+
+<div class="left-term">
+  <h2>Fifth Semester</h2>
+  <hr style="border-top: 2px solid #701d1d;">
+  <div class="result-box" id="resultBox5"></div>
+  <div>
+    <input type="text" class="additionalItem" placeholder="Type here..">
+    <button onclick="addCustomItem('resultBox5')">Add Course</button>
+  </div>
+</div>
+
+<div class="right-term">
+  <h2>Sixth Semester</h2>
+  <hr style="border-top: 2px solid #701d1d;">
+  <div class="result-box" id="resultBox6"></div>
+  <div>
+    <input type="text" class="additionalItem" placeholder="Type here..">
+    <button onclick="addCustomItem('resultBox6')">Add Course</button>
+  </div>
+</div>
+
+<script>
+  function addCustomItem(resultBoxId) {
+    var resultBox = document.getElementById(resultBoxId);
+    var additionalItemInput = resultBox.parentNode.querySelector(".additionalItem");
+    var additionalItemValue = additionalItemInput.value.trim();
+    if (additionalItemValue !== "") {
+      resultBox.innerHTML += "<div><span>" + additionalItemValue + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
+      additionalItemInput.value = "";
+    }
+  }
+
+  function removeItem(item) {
+    item.parentNode.removeChild(item);
+  }
+</script>
+
+
+<div class="left-term">
+  <h2>Seventh Semester</h2>
+  <hr style="border-top: 2px solid #701d1d;">
+  <div class="result-box" id="resultBox7"></div>
+  <div>
+    <input type="text" class="additionalItem" placeholder="Type here..">
+    <button onclick="addCustomItem('resultBox7')">Add Course</button>
+  </div>
+</div>
+
+<div class="right-term">
+  <h2>Eighth Semester</h2>
+  <hr style="border-top: 2px solid #701d1d;">
+  <div class="result-box" id="resultBox8"></div>
+  <div>
+    <input type="text" class="additionalItem" placeholder="Type here..">
+    <button onclick="addCustomItem('resultBox8')">Add Course</button>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+
+<script>
+  function addCustomItem(resultBoxId) {
+    var resultBox = document.getElementById(resultBoxId);
+    var additionalItemInput = resultBox.parentNode.querySelector(".additionalItem");
+    var additionalItemValue = additionalItemInput.value.trim();
+    if (additionalItemValue !== "") {
+      resultBox.innerHTML += "<div><span>" + additionalItemValue + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
+      additionalItemInput.value = "";
+    }
+  }
+
+  function removeItem(item) {
+    item.parentNode.removeChild(item);
+  }
+</script>
+
+
+
+  <div class="beige-bar">
+    <img src="SchoolOfInformation2.png" alt="School of Information Logo" class="school-logo2">
+    <div class="text-bar">
+      <p>School of Information</p>
+	    <p>1103 E. 2nd St., Rm. 409 (Harvill Building)</p>
+	    <p>P.O. Box 210076</p>
+	    <p>Tucson, Arizona 85721</p>
+	    <p>Contact Us | <a href="mailto:si_info@arizona.edu">si_info@arizona.edu</a> | 520-621-3565</p>
+	    <p>A member of the iSchools consortium.</p>
+	    <p>Emergency Information</p>
+	    <p>UAlert</p>
+	    <p>Information Security & Privacy</p>
+	    <p>Campus Accessibility</p>
+    </div>
+  </div>
+</body>
+</html>

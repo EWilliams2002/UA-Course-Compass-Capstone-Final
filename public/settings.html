@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8' />
+    <title>Settings</title>
+    
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+
+        }
+
+        #top {
+            top: 0px;
+            position: absolute;
+            background-color: #a70d26;
+            color: white;
+            width: 100%;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        #nameLogo {
+            position: relative;
+            left: 50px;
+            top: 8px;
+            width: 300px;
+            height: 35px;
+
+        }
+
+        #logoTop {
+            position: absolute;
+            top: 70px;
+            left: 3px;
+            margin-left: 85px;
+            width: 245px;
+            height: 44px;
+
+        }
+
+        #headlineText {
+        
+            display: inline-flex;
+            position: relative;
+            left: 110px;
+            top: 130px;
+            width: 250px;
+            text-align: left;
+
+        }
+
+        .logoutButton {
+            position: absolute;
+            right: 50px;
+            top: 127px;
+            text-align: center;
+            background-color: rgba(212, 212, 212, 0.3);
+            border: 2px solid rgba(212, 212, 212, 0.3);
+            border-radius: 10%;
+            display: inline-flex;
+            height: 30px;
+            width: 68px;
+            cursor: pointer;
+        }
+
+        #title {
+            position: absolute;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #0C234B;
+            top: 110px;
+            margin-left: 94px;
+            width: 250px;
+            height: 44px;
+
+        }
+
+        #content {
+            display: inline-flex;
+            position: relative;
+            top: 150px;
+            left: 200px;
+            width: 50%;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            height: 250px;
+        }
+
+        #settings {
+            display: inline-flex;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tabButtons {
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 70px;
+            width: 65%;
+            height: 30px;
+        }
+
+        .accountSettings, .passwordSettings, .emailSettings {
+            text-align: left;
+            position: relative;
+            background-color: #dd00ff00;
+            width: 60%;
+            height: 45px;
+            margin-left: 0px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .accountLabels, .passwordLabels, .emailLabels {
+            font-size: small;
+            color: rgba(0, 0, 0, 0.80);
+        }
+
+        #bottom {
+            background-color: beige;
+            position: relative;
+            margin: 0;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            width: 100%;
+            height: 198.59px;
+            bottom: 0%;
+            line-height: 1px;
+            top: 263px;
+
+        }
+
+        #logoBottom {
+            position: absolute;
+            width: 198px;
+            height: 35.904px;
+            top: 60px;
+            left: 30px;
+
+        }
+
+        .footerText {
+            text-align: right;
+            line-height: 4px;
+            padding-right: 10px;
+            padding-left: 10px;
+            
+        }
+
+        .tabButtons:before, .logoutButton:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            background-color: rgba(212, 212, 212, 0.3);
+            opacity: 0;
+        }
+
+        .tabButtons:hover:before, .logoutButton:hover:before {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: all 0.2s linear;
+        }
+
+        .buttonText {
+            margin-left: 10px;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+    </style>
+
+</head>
+
+<body id='body'>
+
+    <div id='top' >
+        <img id='nameLogo' src='ua_wordmark_line_logo_white_rgb.min.svg' alt='University of Arizona'>
+
+    </div>
+
+    <img id='logoTop' src='SchoolOfInformation.png' alt='School of Information'>
+
+
+    <div id="headlineText">
+        <h2 style="margin: 0;  padding: 0;">
+            Account Settings
+        </h2>
+    </div>
+
+    <div class='logoutButton' style="margin: 0; padding: 0;">
+        <p class='buttonText' onclick="logout()">Logout</p>
+    </div>
+
+    <br>
+    
+    <div id='content'>
+
+        <div id='tabs'>
+
+            <div class='tabButtons' id='accountButton'>
+                <p class='buttonText'>Account</p>
+
+            </div>
+
+            <div class='tabButtons' id='passwordButton'>
+            
+                <p class='buttonText'>Password</p>
+            </div>
+
+            <div class='tabButtons' id='emailnotifButton'>
+                <p class='buttonText'>Notifications</p>
+
+            </div>
+
+            <div class='tabButtons' id='instructions'>
+                <p class='buttonText'>Instructions</p>
+
+            </div>
+
+        </div>
+
+        <div id='settings'>
+
+            <form>
+                <div class="accountSettings" style="margin-top: 0;">
+                    <label for="firstName" class="accountLabels">First Name</label><br>
+                    <input type="text" id="firstName" class="accountInputs" name="firstName" value="" required="">
+        
+                </div>
+
+                <div class="accountSettings" style="margin-top: 10px;">
+                    <label for="lastName" class="accountLabels">Last Name</label><br>
+                    <input type="text" id="lastName" class="accountInputs" name="lastName" value="" required="">
+        
+                </div>
+
+                <div class="accountSettings" style="margin-top: 10px;">
+                    <button type="button" id="nameResetButton" value="Submit">Submit</button>
+        
+                </div>
+            </form>
+
+            <form>
+
+                <div class="accountSettings" style="margin-top: 0px; margin-left: 17px;">
+                    <label for="email" class="accountLabels">Email</label><br>
+                    <input type="text" id="email" class="accountInputs" name="email" value="" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" title="Must be an Email" required="">
+        
+                </div>
+
+                <div class="accountSettings" style="margin-top: 10px; margin-left: 17px;">
+                    <button type="button" id="emailResetButton" value="Submit">Submit</button>
+        
+                </div>
+                
+            </form>
+            
+            
+            
+        </div>
+
+    </div>
+
+    <script src='settings.js'></script>
+    <script src='login.js'></script>
+
+    <div id='bottom'>
+        <img id='logoBottom' src='SchoolOfInformation.png' alt='School of Information'>
+
+        <p class='footerText'>School of Information</p>
+        <p class='footerText'>1103 E. 2nd St., Rm. 409 (Harvill Building)</p>
+        <p class='footerText'>P.O. Box 210076</p>
+        <p class='footerText'>Tucson, Arizona 85721</p>
+        <p class='footerText'>Contact Us | <a href=“mailto:si_info@arizona.edu”>si_info@arizona.edu</a> | 520-621-3565</p>
+        <p class='footerText'>A member of the iSchools consortium.</p>
+        <p class='footerText'>Emergency Information</p>
+        <p class='footerText'>UAlert</p>
+        <p class='footerText'>Information Security & Privacy</p>
+        <p class='footerText'>Campus Accessibility</p>
+    </div>
+
+</body>
+
+</html>

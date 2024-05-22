@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <title>Instructions</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+
+        }
+
+        #top {
+            top: 0px;
+            position: absolute;
+            background-color: #a70d26;
+            color: white;
+            width: 100%;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        #nameLogo {
+            position: relative;
+            left: 50px;
+            top: 8px;
+            width: 300px;
+            height: 35px;
+
+        }
+
+        #logoTop {
+            position: absolute;
+            top: 70px;
+            left: 3px;
+            margin-left: 85px;
+            width: 245px;
+            height: 44px;
+
+        }
+
+        #title {
+            position: absolute;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            color: #0C234B;
+            top: 110px;
+            margin-left: 94px;
+            width: 250px;
+            height: 44px;
+
+        }
+
+        #instructions {
+            position: relative;
+            top: 125px;
+            left: 90px;
+            width: 80%;
+            margin-bottom: 20px;
+            text-align: left;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+
+        #instructionssample1 {
+            position: relative;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        #instructionssample2 {
+            position: relative;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 1000px;
+        }
+
+        #instructionssample3 {
+            position: relative;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 850px;
+        }
+
+        #bottom {
+            background-color: beige;
+            position: relative;
+            margin: 0;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            width: 100%;
+            height: 198.59px;
+            bottom: 0%;
+            line-height: 1px;
+            top: 263px;
+
+        }
+
+        #logoBottom {
+            position: absolute;
+            width: 198px;
+            height: 35.904px;
+            top: 60px;
+            left: 30px;
+
+        }
+
+        .footerText {
+            text-align: right;
+            line-height: 4px;
+            padding-right: 10px;
+            padding-left: 10px;
+            
+        }
+
+        #headlineText {
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            display: inline-flex;
+            position: relative;
+            left: 110px;
+            top: 130px;
+            width: 400px;
+            text-align: left;
+
+        }
+
+        .logoutButton:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            background-color: rgba(212, 212, 212, 0.3);
+            opacity: 0;
+        }
+
+        .logoutButton:hover:before {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: all 0.2s linear;
+        }
+
+        .logoutButton {
+            position: absolute;
+            right: 50px;
+            top: 127px;
+            text-align: center;
+            background-color: rgba(212, 212, 212, 0.3);
+            border: 2px solid rgba(212, 212, 212, 0.3);
+            border-radius: 10%;
+            display: inline-flex;
+            height: 30px;
+            width: 68px;
+            cursor: pointer;
+        }
+
+        .buttonText {
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            margin-left: 10px;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+    </style>
+
+</head>
+
+<body id="body">
+
+    <div id="top" >
+        <img id="nameLogo" src="ua_wordmark_line_logo_white_rgb.min.svg" alt="University of Arizona">
+
+    </div>
+
+    <img id="logoTop" src="SchoolOfInformation.png" alt="School of Information">
+
+    <div id="headlineText">
+        <h2 style="margin: 0;  padding: 0;">
+            Welcome to UA Course Compass
+        </h2>
+    </div>
+
+    <div class='logoutButton' style="margin: 0; padding: 0;">
+        <p class='buttonText' onclick="logout()">Logout</p>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div id="instructions">
+
+        <a>
+            This site well help you plan out your four year academic career at the University of Arizona
+
+        </a>
+
+        <br>
+        <br>
+        <br>
+
+        <a>
+            After logging in, you are brought to a screen where you can choose to explore 4 different options. The four are
+            Create a 4-year plan, Interest Survey, Course Reccommendation, and Resource Links.
+        </a>
+
+        <br>
+        <br>
+        <br>
+
+        <img id="instructionssample2" src="instructionssample2.png" alt="Sample course planner node">
+
+        <br>
+        <br>
+        <br>
+
+        <a>
+            First, you should click on Interest survey because it is a 
+        </a>
+
+        <a style="color: red; font-weight: bold;">
+            REQUIREMENT
+        </a>
+
+        <a>
+            that you fill that out to get course reccommendations in the reccommendations tab.
+        </a>
+
+        <br>
+        <br>
+        <br>
+
+        <img id="instructionssample3" src="instructionssample3.png" alt="Sample course planner node">
+
+        <br>
+        <br>
+        <br>
+
+        <a>
+            After you complete the survey, the reccommendations tab will fill up. You can take a look at that to get and idea of what classes you want to put
+            in your 4 year planner.
+        </a>
+
+        <br>
+        <br>
+        <br>
+
+        <a>
+            Once you've chosen what classes you want to take, it's time to put them in your planner. After you've made your way to the
+            course planner tab, you can choose to add any class to one of the semesters.
+        </a>
+
+        <br>
+        <br>
+        <br>
+
+        <a>
+            To add the class, type the name of the course where it says "Type here.." and then click "Add" to add it.
+        </a>
+
+        <br>
+        <br>
+        <br>
+        
+        <img id="instructionssample1" src="instructionssample1.png" alt="Sample course planner node">
+
+        <br>
+        <br>
+        <br>
+
+        <a>
+            You can also delete a course by clicking the red dash that shows up when you add a class to the list
+        </a>
+
+        <br>
+        <br>
+        <br>
+
+        <img id="instructionssample1" src="instructionssample4.png" alt="Deleting course">
+
+        <br>
+        <br>
+        <br>
+
+        <a>
+            Additionally, you can click on Resource Links for helpful references as well as instructions on how to use D2L and UAccess
+        </a>
+
+        <br>
+        <br>
+        <br>
+
+        <img id="instructionssample1" src="instructionssample5.png" alt="Resource Links">
+
+        <br>
+        <br>
+        <br>
+
+    </div>
+
+    <br>
+
+    <div id="bottom">
+        <img id="logoBottom" src="SchoolOfInformation.png" alt="School of Information">
+
+        <p class="footerText">School of Information</p>
+        <p class="footerText">1103 E. 2nd St., Rm. 409 (Harvill Building)</p>
+        <p class="footerText">P.O. Box 210076</p>
+        <p class="footerText">Tucson, Arizona 85721</p>
+        <p class="footerText">Contact Us | <a href=“mailto:si_info@arizona.edu”>si_info@arizona.edu</a> | 520-621-3565</p>
+        <p class="footerText">A member of the iSchools consortium.</p>
+        <p class="footerText">Emergency Information</p>
+        <p class="footerText">UAlert</p>
+        <p class="footerText">Information Security & Privacy</p>
+        <p class="footerText">Campus Accessibility</p>
+    </div>
+
+</body>
+
+</html>
