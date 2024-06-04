@@ -3,44 +3,76 @@
 
 // Add function requests to bring up an error when user enters anything but an email and
 
-function login() {
-    let e = $("#email").val();
-    let p = $("#password").val();
-    $.get("/account/login/" + e + "/" + encodeURIComponent(p), (data, status) => {
-      alert(data);
-      if (data == "SUCCESS") {
-        window.location.href = "disclaimer.html";
-      }
-    });
+
+let loginStatus1 = document.getElementById("loginError1");
+let loginStatus2 = document.getElementById("loginError2");
+document.getElementById("loginButton").onclick = function loginUser(){
+
+    let useremail = document.getElementById("emaillogin").value;
+    let password = document.getElementById("passwordlogin").value;
+    //Sending login info to server
+    let payload = {useremail: useremail, password: password};
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/login');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(payload));
+    xhr.onreadystatechange = function(){
+    if(xhr.readyState == 4 && xhr.status == 200){
+        var response = JSON.parse(xhr.responseText);
+        if(response["login"] == "Login worked"){
+            window.location.replace("mainweb.html");
+            loginStatus1.style.display = "none";
+            loginStatus2.style.display = "none";
+        }else{
+            if(response["login"] == "The password you have entered is incorrect!"){
+                loginStatus1.style.display = "block";
+            } else{
+                loginStatus2.style.display = "block";
+            }
+            setTimeout(function(){
+                window.location.replace("login.html");
+            }, 5000); 
+
+        };
+    };
+    };
+
+}
+let accountStatus = document.getElementById("createError");
+document.getElementById("createAccountButton").onclick = function createUser(){
+    let useremail = document.getElementById("emailcreate").value;
+    let password = document.getElementById("passwordcreate").value;
+    let major = "";
+    if (document.getElementById("emphDs").checked){
+        major = document.getElementById("emphDs").value;
+    }else{
+        if (document.getElementById("emphIntTech").checked){
+            major = document.getElementById("emphIntTech").value;
+        };
+    };
+    //Sending login info to server
+    let payload = {useremail: useremail, password: password, major: major};
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/createaccount');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(payload));
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            var response = JSON.parse(xhr.responseText);
+            if(response["account"] == "Account worked"){
+                window.location.replace("login.html");
+                accountStatus.style.display = "none";
+            }else{
+                accountStatus.style.display = "block";
+                setTimeout(function(){
+                    window.location.replace("login.html");
+                }, 5000); 
+            };
+        };
+    };
+
 }
 
-function logout() {
-  //Implement logout functions to bring back to login page
-}
-
-function switchToCreate() {
-  window.location.href = "createAccount.html";
-}
-
-function switchToForgotPassword() {
-  window.location.href = "forgotpassword.html";
-}
-
-//Also check and report back if account already exists here as well
-function createAccount() {
-  let u = $("#create-username").val();
-  let p = $("#create-password").val();
-  $.get(
-    "/account/create/" + u + "/" + encodeURIComponent(p),
-    (data, status) => {
-      alert(data);
-      window.location.href = "disclaimer.html";
-      // Dont know if it'll work but we could put a set timeout here that lasts the same time
-      // as the one to switch the page off of disclaimer.html but add half a second to it so 
-      // that the instructions load on the first time they create an account.
-
-      //  Alternatively we could save a boolean in the schema for the accounts that tell whether
-      // they are a first time member or not
-    }
-  );
-}
+document.getElementById("forgotpassword").onclick = function loadPage(){
+    window.location.replace("forgotpassword.html");
+};

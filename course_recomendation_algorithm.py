@@ -155,4 +155,5 @@ def main():
         print(f"Course: {course}, Similarity: {similarity}")
     '''
 
-main()
+if __name__ == "__main__":
+    main()

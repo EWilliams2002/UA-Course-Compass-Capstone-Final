@@ -1,30 +1,30 @@
-// Add code to this file to make function request to send email verification
 
-function sendEmail() {
-    // Request to Send email
-}
-
-function resetPassword() {
-    // reset password request and switch to login page in here
-}
-
-function verifyCode() {
-    //Make request to server to verify the code given and then inside request switch page to resetpassword.html
-}
-
-var sendEmailButton = document.getElementById("sendEmailButton");
-var verifyCodeButton = document.getElementById("verifyCodeButton");
 var resetPasswordButton = document.getElementById("resetPasswordButton");
+let forgotError = document.getElementById("throwError");
 
-sendEmailButton.addEventListener("click", () => {
-    sendEmail()
-    window.location.href = "verifycode.html";
-});
 
-verifyCodeButton.addEventListener("click", () => {
-    verifyCode()
-});
+document.getElementById("resetPasswordButton").onclick = function resetPassword(){
+    let userEmail = document.getElementById("forgotEmail").value;
+    let newPassword = document.getElementById("newPassword").value;
 
-resetPasswordButton.addEventListener("click", () => {
-    resetPassword()
-});
+    //Sending login info to server
+    let payload = {useremail: userEmail, newpassword: newPassword};
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/forgotpassword');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(payload));
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            var response = JSON.parse(xhr.responseText);
+            if(response["passwordreset"] == "Reset worked"){
+                window.location.replace("login.html");
+                forgotError.style.display = "none";
+            }else{
+                forgotError.style.display = "block";
+                setTimeout(function(){
+                    window.location.replace("forgotpassword.html");
+                }, 5000); 
+            };
+        };
+    };
+}

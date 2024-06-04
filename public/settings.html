@@ -64,12 +64,13 @@
             right: 50px;
             top: 127px;
             text-align: center;
-            background-color: rgba(212, 212, 212, 0.3);
-            border: 2px solid rgba(212, 212, 212, 0.3);
+            background-color:#001C48;
             border-radius: 10%;
             display: inline-flex;
-            height: 30px;
-            width: 68px;
+            height: 20px;
+            color: white;
+            width: 55px;
+            font-size: 12px;
             cursor: pointer;
         }
 
@@ -89,14 +90,28 @@
             position: relative;
             top: 150px;
             left: 200px;
-            width: 50%;
+            width: 60%;
             text-align: center;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             height: 250px;
         }
 
         #settings {
+            position: relative;
             display: inline-flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        #currRemindPref {
+            margin-right: 50px;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #updtRemindPref {
+            text-align: left;
             position: relative;
             width: 100%;
             height: 100%;
@@ -113,11 +128,15 @@
             height: 30px;
         }
 
+        .accountLabels, .emailLabels {
+            margin-right: 3px;
+            
+        }
+
         .accountSettings, .passwordSettings, .emailSettings {
             text-align: left;
             position: relative;
-            background-color: #dd00ff00;
-            width: 60%;
+            width: 100%;
             height: 45px;
             margin-left: 0px;
             margin-right: 10px;
@@ -157,9 +176,15 @@
             line-height: 4px;
             padding-right: 10px;
             padding-left: 10px;
+            color: #001C48;
+            text-decoration: none;
             
         }
 
+        a:visited {
+      color: inherit; 
+
+    }
         .tabButtons:before, .logoutButton:before {
             content: '';
             position: absolute;
@@ -188,6 +213,17 @@
             line-height: 1.7;
         }
 
+        .square_page2{
+            background-color: #001C48;
+            border-radius: 5px;
+            font-size: 10px;
+            position: absolute;  
+            top: 30px;
+            padding: 3px;
+            left: -20px;
+            text-decoration: none;
+        }
+
     </style>
 
 </head>
@@ -197,19 +233,23 @@
     <div id='top' >
         <img id='nameLogo' src='ua_wordmark_line_logo_white_rgb.min.svg' alt='University of Arizona'>
 
+
+
     </div>
 
     <img id='logoTop' src='SchoolOfInformation.png' alt='School of Information'>
 
 
     <div id="headlineText">
-        <h2 style="margin: 0;  padding: 0;">
+        <h2 style="margin: 0;  padding: 0; color: #001C48;">
             Account Settings
         </h2>
+        <a class="square_page2" style="margin-bottom: 10px; margin-left: 20px; color: #eeeeee;" href="mainweb.html"> Main Page </a>
+
     </div>
 
-    <div class='logoutButton' style="margin: 0; padding: 0;">
-        <p class='buttonText' onclick="logout()">Logout</p>
+    <div class='logoutButton' id="settingsLogout" style="margin: 0; padding: 0;">
+        <p class='buttonText'>Logout</p>
     </div>
 
     <br>
@@ -223,16 +263,6 @@
 
             </div>
 
-            <div class='tabButtons' id='passwordButton'>
-            
-                <p class='buttonText'>Password</p>
-            </div>
-
-            <div class='tabButtons' id='emailnotifButton'>
-                <p class='buttonText'>Notifications</p>
-
-            </div>
-
             <div class='tabButtons' id='instructions'>
                 <p class='buttonText'>Instructions</p>
 
@@ -242,48 +272,56 @@
 
         <div id='settings'>
 
-            <form>
-                <div class="accountSettings" style="margin-top: 0;">
-                    <label for="firstName" class="accountLabels">First Name</label><br>
-                    <input type="text" id="firstName" class="accountInputs" name="firstName" value="" required="">
-        
-                </div>
-
-                <div class="accountSettings" style="margin-top: 10px;">
-                    <label for="lastName" class="accountLabels">Last Name</label><br>
-                    <input type="text" id="lastName" class="accountInputs" name="lastName" value="" required="">
-        
-                </div>
-
-                <div class="accountSettings" style="margin-top: 10px;">
-                    <button type="button" id="nameResetButton" value="Submit">Submit</button>
-        
-                </div>
-            </form>
-
-            <form>
-
-                <div class="accountSettings" style="margin-top: 0px; margin-left: 17px;">
-                    <label for="email" class="accountLabels">Email</label><br>
-                    <input type="text" id="email" class="accountInputs" name="email" value="" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" title="Must be an Email" required="">
-        
-                </div>
-
-                <div class="accountSettings" style="margin-top: 10px; margin-left: 17px;">
-                    <button type="button" id="emailResetButton" value="Submit">Submit</button>
-        
-                </div>
-                
-            </form>
+            <form> 
+                <div id='currRemindPref'> 
+                    <div class='emailSettings' style='margin-top: 0;'> 
+                        <label class='emailLabels' >Current Settings</label> 
+                        <br> <br> 
+                        <label class='emailLabels' >Email:</label> 
+                        <span id="currentEmail">sample@arizona.edu</span> <br>
+                        <br>
+                        <label class='emailLabels' >Password (Encrypted):</label> 
+                        <span id="currentPassword">sample1234</span> <br>
+                        <br>
+                        <label class='emailLabels' >Major:</label> 
+                        <span id="currentMajor">sample major</span> <br>
+                        <br>
+                        <label class='emailLabels' >Opted for Email Notifications:</label> 
+                        <span id="currentNotify">True</span> <br>
+                    </div> 
+                </div> 
+            </form> 
             
-            
+            <form> 
+                <div id='updtRemindPref'> 
+                    <label class='emailLabels' >Update Settings</label> <br> <br> 
+                    <label for='email' class='emailLabels'>Email:</label> 
+                    <input type='email' id='updateEmail' pattern='^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$' title='Must be an email' required=''> <br> <br>
+
+                    <label for='major' class='emailLabels'>Password:</label> 
+                    <input type='major' id='updatePassword' required=''> <br> <br> 
+                    
+                    <label for='major' class='emailLabels'>Major:</label> 
+                    <input type='major' id='updateMajor' required=''> <br> <br> 
+
+                    <label class='emailLabels' >Opted In:</label> 
+                    <input type='radio' id='optYes' name='opted' required='' value='true'> 
+                    <label for='optYes'>True</label> 
+                    <input type='radio' id='optNo' name='opted' required='' value='false'> 
+                    <label for='optNo'>False</label><br>
+
+                    <div class='emailSettings' style='margin-top: 10px;'> 
+                        <input type='submit' id='accountSettingsSave' value='Save'> 
+                    </div> 
+
+                </div> 
+            </form>
             
         </div>
 
     </div>
 
     <script src='settings.js'></script>
-    <script src='login.js'></script>
 
     <div id='bottom'>
         <img id='logoBottom' src='SchoolOfInformation.png' alt='School of Information'>
@@ -292,7 +330,7 @@
         <p class='footerText'>1103 E. 2nd St., Rm. 409 (Harvill Building)</p>
         <p class='footerText'>P.O. Box 210076</p>
         <p class='footerText'>Tucson, Arizona 85721</p>
-        <p class='footerText'>Contact Us | <a href=“mailto:si_info@arizona.edu”>si_info@arizona.edu</a> | 520-621-3565</p>
+        <p class='footerText'>Contact Us | <a style="color: #001C48;" href=“mailto:si_info@arizona.edu”>si_info@arizona.edu</a> | 520-621-3565</p>
         <p class='footerText'>A member of the iSchools consortium.</p>
         <p class='footerText'>Emergency Information</p>
         <p class='footerText'>UAlert</p>

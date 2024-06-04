@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
     <meta charset="UTF-8" />
     <title>UAC Interest Survey</title>
@@ -13,18 +15,36 @@
             font-family: Arial, sans-serif;
         
         }
+        .square_page{
+            background-color: #001C48;
+            padding: 4px;
+            border-radius: 5px;
+            font-size: 11px;
+
+        }
+
         
         #top {
-            top: 0px;
             position: absolute;
-            background-color: #a70d26;
+            top: 0;
+            background-color: #8B0015;
             color: white;
             width: 100%;
             height: 50px;
-            margin: 0;
-            padding: 0;
-            
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
         }
+        #settings-link, #help-link 
+        {
+            color: white;
+            margin-right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
         
         #nameLogo {
             position: relative;
@@ -37,19 +57,28 @@
         
         #logoTop {
             position: absolute;
-            top: 70px;
-            left: 3px;
-            margin-left: 85px;
-            width: 245px;
-            height: 44px;
+            top: 50px;
+            margin-left: 20px;
+            height: 50px;
         
         }
         
+        #title {
+            position: absolute;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            color: #0C234B;
+            top: 110px;
+            margin-left: 94px;
+            width: 250px;
+            height: 44px;
+        
+        }
         
         #forms {
             position: relative;
             top: 155px;
             width: 70%;
+            margin-top: -150px;
         
         }
         
@@ -95,6 +124,7 @@
             bottom: 0%;
             line-height: 1px;
             top: 220px;
+            
         
         }
         
@@ -114,87 +144,147 @@
             padding-left: 10px;
             
         }
-
-        #headlineText {
+        .text-main {
+            color: rgb(4, 4, 85);
+            position: absolute;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-            display: inline-flex;
-            position: relative;
-            left: 110px;
-            top: 130px;
+            color: #0C234B;
+            top: 150px;
+            margin: 0;
+            margin-left: 90px;
+            }
+        .title_top{
+            position: absolute;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            color: #0C234B;
+            top: 100px;
+            margin-left: 70px;
             width: 250px;
-            text-align: left;
+            height: 44px;
 
         }
-
-        .logoutButton:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 0;
-            height: 0;
-            background-color: rgba(212, 212, 212, 0.3);
-            opacity: 0;
+        .text_main_top{
+            margin-left: 40px;
+            color: rgb(4, 4, 85);
         }
-
-        .logoutButton:hover:before {
-            width: 100%;
-            height: 100%;
-            opacity: 1;
-            transition: all 0.2s linear;
+        .pages_title{
+            margin-top: 150px;
+            margin-left: 50px;
         }
+          
 
-        .logoutButton {
-            position: absolute;
-            right: 50px;
-            top: 127px;
-            text-align: center;
-            background-color: rgba(212, 212, 212, 0.3);
-            border: 2px solid rgba(212, 212, 212, 0.3);
-            border-radius: 10%;
-            display: inline-flex;
-            height: 30px;
-            width: 68px;
-            cursor: pointer;
-        }
+        a:visited {
+      color: inherit; 
 
-        .buttonText {
-            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-            margin-left: 10px;
-            margin-right: 0;
-            margin-bottom: 0;
-            margin-top: 0;
-            padding: 0;
-            line-height: 1.7;
-        }
+    }
+    a{
+      text-decoration: none;
+    }
+  
+  #bottom_text {
+  text-align: right;
+  line-height: 2.5px; 
+  margin-top: -10px;
+  color: #001C48;
+  position: absolute;
+  top: 10px;
+  right:20px;
+  }
 
-        </style>
+
+  #bottom {
+  background-color: beige;
+  position: relative;
+  padding-left: 20px; 
+  padding-right: 20px; 
+  padding-top: 10px;
+  margin-top: 40px;
+  padding-bottom: 30px;
+  width: auto;
+  box-sizing: border-box; 
+  bottom: 0;
+  
+}
+
+#logo2 {
+  position: absolute;
+  width: 198px;
+  height: 35.904px;
+  top: 60px;
+  left: 30px;
+}
+
+.square_page2{
+      background-color: #001C48;
+      border-radius: 5px;
+      font-size: 10px;
+      position: absolute;  
+      top: 22px;
+      right: 150px;
+      text-decoration: none;
+    }
+
+    .settings-icon, .help-link {
+    position: absolute;
+    top: 30px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.settings-icon {
+    right: 50px;
+}
+
+    .help-link {
+      position: relative;   
+      top: 5px;
+      right: 55px;
+      font-size: 12px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+
+      white-space: nowrap; 
+
+    }
+
+
+    </style>
 
 </head>
 
 <body id="body">
 
-    <div id="top" >
+    <div id="top">
         <img id="nameLogo" src="ua_wordmark_line_logo_white_rgb.min.svg" alt="University of Arizona">
-
+        <div >
+            <button class="square_page2" id="logoutInterest" style="color: #dfdee7;">Logout</button>
+            <a href="settings.html" class="fas fa-cog settings-icon"></a>
+            <a href="instructions.html" class="help-link">Need help?</a>
+        </div>
     </div>
 
     <img id="logoTop" src="SchoolOfInformation.png" alt="School of Information">
 
-    <div id="headlineText">
-        <h3 style="margin: 0;  padding: 0;">
-            Interest Survey
-        </h3>
-    </div>
-
-    <div class='logoutButton' style="margin: 0; padding: 0;">
-        <p class='buttonText' onclick="logout()">Logout</p>
-    </div>
 
     <br>
-    
 
+    <h3 class="title_top">Interest Survey</h3>
+
+    <p class="pages_title"></p>
+    <p> 
+        <a class="square_page" style="margin-left: 20px; color: #eeeeee;" href="mainweb.html"> Main Page </a> |
+        <a class="square_page" style="color: #dfdee7;" href="fouryearplan.html">Four Year Plan</a> | 
+        <a class="square_page" style="color: #dfdee7;" href="courserecomendation.html">Course recommendation</a> | 
+        <a class="square_page" style="color: #dfdee7;" href="resourcelinks.html">Resources Link</a>   
+        <!-- <button class="square_page" id="logoutInterest" style="color: #dfdee7;">Logout</button>  -->
+      </p>
     <!--  All button are check box  -->
     <div id="forms">
         <form id="emphasisquestion">
@@ -212,8 +302,7 @@
             <br>
             <br>
             <button type="button" id="submitButton1" value="Submit">Submit</button>
-            <a href="courserecomendation.html">Courses</a>
-
+            
         </form>
         <br>
         <br>
@@ -251,10 +340,10 @@
             <input type="checkbox" id="D3B" class="options" name="tech_domain" value="Machine Learning">
             <label for="D3B" class="options">Machine Learning</label><br>
 
-            <input type="checkbox" id="D3C" class="options" name="tech_domain" value="Cyber">
+            <input type="checkbox" id="D3C" class="options" name="tech_domain" value="Cyberinfastructure">
             <label for="D3C" class="options">Cyberinfastructure</label><br>
 
-            <input type="checkbox" id="D3D" class="options" name="tech_domain" value="Application Programming">
+            <input type="checkbox" id="D3D" class="options" name="tech_domain" value="Software Development">
             <label for="D3D" class="options">Software Development</label><br>
 
             <input type="checkbox" id="D3E" class="options" name="tech_domain" value="Data Science">
@@ -276,13 +365,13 @@
             <!-- Question 4 -->
             <h4 class="question">4. Which aspect of technology interests you the most?</h4>
 
-            <input type="checkbox" id="D4A" class="options" name="projects" value="Innovation">
+            <input type="checkbox" id="D4A" class="options" name="projects" value="Creating innovative solutions to real-world problems">
             <label for="D4A" class="options">Creating innovative solutions to real-world problems</label><br>
 
-            <input type="checkbox" id="D4B" class="options" name="projects" value="Systems">
+            <input type="checkbox" id="D4B" class="options" name="projects" value="Ensuring the performance and integrity of digital systems">
             <label for="D4B" class="options">Ensuring the performance and integrity of digital systems</label><br>
             
-            <input type="checkbox" id="D4C" class="options" name="projects" value="Analysis">
+            <input type="checkbox" id="D4C" class="options" name="projects" value="Analyzing and interpreting large datasets to derive insights">
             <label for="D4C" class="options">Analyzing and interpreting large datasets to derive insights</label>
 
 
@@ -290,10 +379,10 @@
             <!-- Question 5 -->
             <h4 class="question">5. What role do you envision yourself in within industry?</h4>
 
-            <input type="checkbox" id="D5A" class="options" name="tech_aspect" value="Software Developer">
+            <input type="checkbox" id="D5A" class="options" name="tech_aspect" value="Software Developer/Engineer">
             <label for="D5A" class="options">Software Developer/Engineer</label><br>
 
-            <input type="checkbox" id="D5B" class="options" name="tech_aspect" value="Machine Learning Artificial Intelligence">
+            <input type="checkbox" id="D5B" class="options" name="tech_aspect" value="Machine Learning/Artificial Intelligence">
             <label for="D5B" class="options">Machine Learning/Artificial Intelligence Engineer</label><br>
 
             <input type="checkbox" id="D5C" class="options" name="tech_aspect" value="Data Science">
@@ -308,58 +397,58 @@
             <h4 class="question">6. Which technical skill do you prioritize developing further?</h4>
 
             <input type="checkbox" id="D6A" class="options" name="tech_envision" value="Software Development">
-            <label for="D6A" class="options">Programming and software development</label><br>
+            <label for="D6A" class="options">Programming and Software Development</label><br>
 
-            <input type="checkbox" id="D6B" class="options" name="tech_envision" value="Network Administration">
-            <label for="D6B" class="options">Network and system administration</label><br>
+            <input type="checkbox" id="D6B" class="options" name="tech_envision" value="Network and System Administration">
+            <label for="D6B" class="options">Network and System Administration</label><br>
 
-            <input type="checkbox" id="D6C" class="options" name="tech_envision" value="Data Analytics">
-            <label for="D6C" class="options">Data analysis and interpretation</label><br>
+            <input type="checkbox" id="D6C" class="options" name="tech_envision" value="Data Analysis and interpretation">
+            <label for="D6C" class="options">Data Analysis and Interpretation</label><br>
 
-            <input type="checkbox" id="D6D" class="options" name="tech_envision" value="Data Engineering">
-            <label for="D6D" class="options">Data engineering and Database management</label>
+            <input type="checkbox" id="D6D" class="options" name="tech_envision" value="Data Engineering and Database management">
+            <label for="D6D" class="options">Data Engineering and Database Management</label>
 
 
             <!-- Question 7 -->
             <h4 class="question">7. Which technology-related hobby or activity are you most likely to spend your free time on?</h4>
 
             <input type="checkbox" id="D7A" class="options" name="tech_skill" value="Programming">
-            <label for="D7A" class="options">Coding or programming personal projects</label><br>
+            <label for="D7A" class="options">Coding or Programming Personal Projects</label><br>
 
             <input type="checkbox" id="D7B" class="options" name="tech_skill" value="Electronics">
-            <label for="D7B" class="options">Experimenting with gadgets and electronics</label><br>
+            <label for="D7B" class="options">Experimenting with Gadgets and Electronics</label><br>
 
             <input type="checkbox" id="D7C" class="options" name="tech_skill" value="Analytics">
-            <label for="D7C" class="options">Analyzing data sets or playing with statistics</label>
+            <label for="D7C" class="options">Analyzing Data Sets or Playing with Statistics</label>
 
 
             <!-- Question 8 -->
             <h4 class="question">8. Which technology industry excites you the most?</h4>
 
             <input type="checkbox" id="D8A" class="options" name="project_undetake" value="Tech Startups">
-            <label for="D8A" class="options">Tech startups and entrepreneurship</label><br>
+            <label for="D8A" class="options">Tech Startups and Entrepreneurship</label><br>
 
             <input type="checkbox" id="D8B" class="options" name="project_undetake" value="Information Technology">
-            <label for="D8B" class="options">Information technology (IT) consulting</label><br>
+            <label for="D8B" class="options">Information Technology (IT) Consulting</label><br>
 
-            <input type="checkbox" id="D2A" class="options" name="project_undetake" value="Research">
-            <label for="D8C" class="options">Research and development in emerging technologies</label><br>
+            <input type="checkbox" id="D8C" class="options" name="project_undetake" value="Research">
+            <label for="D8C" class="options">Research and Development in Emerging Technologies</label><br>
 
             <input type="checkbox" id="D8D" class="options" name="project_undetake" value="Gaming Industry">
-            <label for="D8D" class="options">Entertainment/gaming industry</label><br>
+            <label for="D8D" class="options">Entertainment/Gaming industry</label><br>
 
             <input type="checkbox" id="D8E" class="options" name="project_undetake" value="Big Tech">
-            <label for="D8E" class="options">Big Tech Corporations</label>
+            <label for="D8E" class="options">Big Tech  (Google, Microsoft, Amazon, etc.)</label>
 
 
             <!-- Question 9 -->
             <h4 class="question">9. What aspect of art do you want to gain more skills in? (Please choose your top 1-3)</h4>
 
-            <input type="checkbox" id="D9A" class="options" name="excite_tech" value="Storytelling">
+            <input type="checkbox" id="D9A" class="options" name="excite_tech" value="Digital Storytelling">
             <label for="D9A" class="options">Digital Storytelling</label><br>
 
-            <input type="checkbox" id="D9B" class="options" name="excite_tech" value="Image Media">
-            <label for="D9B" class="options">Moving Image Media</label><br>
+            <input type="checkbox" id="D9B" class="options" name="excite_tech" value="Moving Image Media">
+            <label for="D9B" class="options">Television and Film</label><br>
 
             <input type="checkbox" id="D9C" class="options" name="excite_tech" value="Creative Coding">
             <label for="D9C" class="options">Creative Coding</label><br>
@@ -378,31 +467,31 @@
             <h4 class="question">10. When it comes to examining society, what would you like to learn more about? (Please choose your top 1-3)</h4>
 
             <input type="checkbox" id="D10A" class="options" name="excite_tech" value="Identities">
-            <label for="D10A" class="options">The creation of identities online</label><br>
+            <label for="D10A" class="options">The Creation of Identities Online</label><br>
 
-            <input type="checkbox" id="D10B" class="options" name="excite_tech" value="Theories">
-            <label for="D10B" class="options">How information is created and negotiated with technology</label><br>
+            <input type="checkbox" id="D10B" class="options" name="excite_tech" value="Theory">
+            <label for="D10B" class="options">How Information is Created and Negotiated with Technology</label><br>
 
             <input type="checkbox" id="D10C" class="options" name="excite_tech" value="Publishing">
-            <label for="D10C" class="options">The evolution of publishing</label><br>
+            <label for="D10C" class="options">The Evolution of Publishing</label><br>
 
             <input type="checkbox" id="D10D" class="options" name="excite_tech" value="Commerce">
             <label for="D10D" class="options">Commerce in Information Content</label><br>
 
             <input type="checkbox" id="D10E" class="options" name="excite_tech" value="Privacy Crime">
-            <label for="D10E" class="options">Crime on social media and privacy issues</label><br>
+            <label for="D10E" class="options">Crime on Social Media and Privacy Issues</label><br>
 
             <input type="checkbox" id="D10F" class="options" name="excite_tech" value="Disruption">
-            <label for="D10F" class="options">The way technology disrupts society</label><br>
+            <label for="D10F" class="options">The way Technology Disrupts Society</label><br>
 
             <input type="checkbox" id="D10G" class="options" name="excite_tech" value="Learning">
-            <label for="D10G" class="options">How technology can help learning</label><br>
+            <label for="D10G" class="options">How Technology can Help Learning</label><br>
 
             <input type="checkbox" id="D10H" class="options" name="excite_tech" value="Protect Information">
-            <label for="D10H" class="options">Protecting information online</label><br>
+            <label for="D10H" class="options">Protecting Information Online</label><br>
 
             <input type="checkbox" id="D10I" class="options" name="excite_tech" value="Scientific Data">
-            <label for="D10I" class="options">Science and scientific data in society</label>
+            <label for="D10I" class="options">Science and Scientific Data in Society</label>
 
 
             <!-- Submit button -->
@@ -465,13 +554,13 @@
             <!-- Question 4 -->
             <h4 class="question">4. Which aspect of technology interests you the most?</h4>
             <input type="checkbox" id="I4A" class="options" name="projects" value="User Interface">
-            <label for="I4A" class="options">Designing user-friendly interfaces and experiences</label><br>
+            <label for="I4A" class="options">Designing User-Friendly Interfaces and Experiences</label><br>
 
-            <input type="checkbox" id="I4B" class="options" name="projects" value="Creative">
-            <label for="I4B" class="options">Utilizing programming skills to develop creative works</label><br>
+            <input type="checkbox" id="I4B" class="options" name="projects" value="Creative Works">
+            <label for="I4B" class="options">Utilizing Programming Skills to Develop Creative Works</label><br>
 
-            <input type="checkbox" id="I4C" class="options" name="projects" value="Game">
-            <label for="I4C" class="options">Designing algorithms for video games </label>
+            <input type="checkbox" id="I4C" class="options" name="projects" value="Game Design">
+            <label for="I4C" class="options">Designing Algorithms for Video Games </label>
 
 
             <!-- Question 5 -->
@@ -480,7 +569,7 @@
             <input type="checkbox" id="I5A" class="options" name="tech_aspect" value="Software Developer">
             <label for="I5A" class="options">Software Developer/Engineer</label><br>
 
-            <input type="checkbox" id="I5B" class="options" name="tech_aspect" value="Web Developer">
+            <input type="checkbox" id="I5B" class="options" name="tech_aspect" value="Front End Development">
             <label for="I5B" class="options">Front End Development (Web, Mobile, etc.) </label><br>
 
             <input type="checkbox" id="I5C" class="options" name="tech_aspect" value="Game Developer">
@@ -494,45 +583,45 @@
             <h4 class="question">6. Which technical skill do you prioritize developing further?</h4>
 
             <input type="checkbox" id="I6A" class="options" name="tech_envision" value="Software Development">
-            <label for="I6A" class="options">Programming and software development</label><br>
+            <label for="I6A" class="options">Programming and Software Development</label><br>
 
             <input type="checkbox" id="I6B" class="options" name="tech_envision" value="User Interface">
-            <label for="I6B" class="options">User interface design and usability testing</label><br>
+            <label for="I6B" class="options">User Interface Design and Usability Testing</label><br>
 
             <input type="checkbox" id="I6C" class="options" name="tech_envision" value="Game Development">
-            <label for="I6C" class="options">Creative coding and game development</label>
+            <label for="I6C" class="options">Creative Coding and Game Development</label>
 
 
             <!-- Question 7 -->
             <h4 class="question">7. Which technology-related hobby or activity are you most likely to spend your free time on?</h4>
 
             <input type="checkbox" id="I7A" class="options" name="tech_skill" value="Programming">
-            <label for="I7A" class="options">Coding or programming personal projects</label><br>
+            <label for="I7A" class="options">Coding or Programming Personal Projects</label><br>
 
             <input type="checkbox" id="I7B" class="options" name="tech_skill" value="Electronics">
-            <label for="I7B" class="options">Experimenting with gadgets and electronics</label><br>
+            <label for="I7B" class="options">Experimenting with Gadgets and Electronics</label><br>
 
             <input type="checkbox" id="I7C" class="options" name="tech_skill" value="Computing Art">
-            <label for="I7C" class="options">Designing and creating digital art or graphics</label><br>
+            <label for="I7C" class="options">Designing and Creating Digital Art or Graphics</label><br>
 
 
             <!-- Question 8 -->
             <h4 class="question">8. Which technology industry excites you the most?</h4>
 
             <input type="checkbox" id="I8A" class="options" name="project_undetake" value="Tech Startups">
-            <label for="I8A" class="options">Tech startups and entrepreneurship</label><br>
+            <label for="I8A" class="options">Tech Startups and Entrepreneurship</label><br>
 
             <input type="checkbox" id="I8B" class="options" name="project_undetake" value="Information Technology">
-            <label for="I8B" class="options">Information technology (IT) consulting</label><br>
+            <label for="I8B" class="options">Information Technology (IT) Consulting</label><br>
 
             <input type="checkbox" id="I8C" class="options" name="project_undetake" value="Research">
-            <label for="I8C" class="options">Research and development in emerging technologies</label><br>
+            <label for="I8C" class="options">Research and Development in Emerging Technologies</label><br>
 
             <input type="checkbox" id="I8D" class="options" name="project_undetake" value="Gaming Industry">
-            <label for="I8D" class="options">Entertainment/gaming industry</label><br>
+            <label for="I8D" class="options">Entertainment/Gaming Industry</label><br>
 
             <input type="checkbox" id="I8E" class="options" name="project_undetake" value="Big Tech">
-            <label for="I8E" class="options">Big Tech Corporations</label>
+            <label for="I8E" class="options">Big Tech Corporations (Google, Microsoft, Amazon, etc.)</label>
 
 
             <!-- Question 9 -->
@@ -561,31 +650,31 @@
             <h4 class="question">10. When it comes to examining society, what would you like to learn more about? (Please choose your top 1-3)</h4>
 
             <input type="checkbox" id="I10A" class="options" name="excite_tech" value="Identities">
-            <label for="I10A" class="options">The creation of identities online</label><br>
+            <label for="I10A" class="options">The Creation of Identities Online</label><br>
 
             <input type="checkbox" id="I10B" class="options" name="excite_tech" value="Theories">
-            <label for="I10B" class="options">How information is created and negotiated with technology</label><br>
+            <label for="I10B" class="options">How Information is Created and Negotiated with Technology</label><br>
 
             <input type="checkbox" id="I10C" class="options" name="excite_tech" value="Publishing">
-            <label for="I10C" class="options">The evolution of publishing</label><br>
+            <label for="I10C" class="options">The Evolution of Publishing</label><br>
 
             <input type="checkbox" id="I10D" class="options" name="excite_tech" value="Commerce">
             <label for="I10D" class="options">Commerce in Information Content</label><br>
 
             <input type="checkbox" id="I10E" class="options" name="excite_tech" value="Privacy Crime">
-            <label for="I10E" class="options">Crime on social media and privacy issues</label><br>
+            <label for="I10E" class="options">Crime on Social Media and Privacy Issues</label><br>
 
             <input type="checkbox" id="I10F" class="options" name="excite_tech" value="Disruption">
-            <label for="I10F" class="options">The way technology disrupts society</label><br>
+            <label for="I10F" class="options">The way Technology Disrupts Society</label><br>
 
             <input type="checkbox" id="I10G" class="options" name="excite_tech" value="Learning">
-            <label for="I10G" class="options">How technology can help learning</label><br>
+            <label for="I10G" class="options">How Technology can Help Learning</label><br>
 
             <input type="checkbox" id="I10H" class="options" name="excite_tech" value="Protect Information">
-            <label for="I10H" class="options">Protecting information online</label><br>
+            <label for="I10H" class="options">Protecting Information Online</label><br>
 
             <input type="checkbox" id="I10I" class="options" name="excite_tech" value="Scientific Data">
-            <label for="I10I" class="options">Science and scientific data in society</label>
+            <label for="I10I" class="options">Science and Scientific Data in Society</label>
 
 
             <!-- Submit button -->
@@ -594,23 +683,30 @@
             <button type="button" id="submitButton3" value="Submit">Submit</button>
 
         </form>
+        <div id="formResult"></div>
 
     </div>
+
 
     <div id="bottom">
-        <img id="logoBottom" src="SchoolOfInformation.png" alt="School of Information">
+        <img id="logo2" src="SchoolOfInformation.png" alt="School of Information">
+        <div id="bottom_text">
 
-        <p class="footerText">School of Information</p>
-        <p class="footerText">1103 E. 2nd St., Rm. 409 (Harvill Building)</p>
-        <p class="footerText">P.O. Box 210076</p>
-        <p class="footerText">Tucson, Arizona 85721</p>
-        <p class="footerText">Contact Us | <a href=“mailto:si_info@arizona.edu”>si_info@arizona.edu</a> | 520-621-3565</p>
-        <p class="footerText">A member of the iSchools consortium.</p>
-        <p class="footerText">Emergency Information</p>
-        <p class="footerText">UAlert</p>
-        <p class="footerText">Information Security & Privacy</p>
-        <p class="footerText">Campus Accessibility</p>
-    </div>
+        <p>
+
+        <p style="color: #001C48;" ><b>School of Information</b></p>
+	    <p style="color: #001C48;"  ><b><a style="color: #001C48;"   href="https://www.google.com/maps/place/1103+E+2nd+St,+Tucson,+AZ+85719/@32.2343702,-110.9569788,17z/data=!3m1!4b1!4m6!3m5!1s0x86d67106f7e51223:0x6b78f9e48ae1775c!8m2!3d32.2343702!4d-110.9544039!16s%2Fg%2F11cslx4d03?entry=tts">1103 E. 2nd St.</a>, Rm. 409</b> (Harvill Building)</p>
+	    <p style="color: #001C48;"  >P.O. Box 210076</p>
+	    <p style="color: #001C48;" >Tucson, Arizona 85721</p>
+	    <p style="color: #001C48;"  ><a style="color: #001C48;"  href="https://ischool.arizona.edu/contact">Contact Us </a>| <a  style="color: #001C48;" href="mailto:si_info@arizona.edu">si_info@arizona.edu</a> | <a  style="color: #001C48;" href="tel:5206213565">520-621-3565</a></p>
+	    <p style="color: #001C48;"  >A member of <a  style="color: #001C48;" href="https://www.ischools.org/">the iSchools consortium</a></p>
+      <p style="color: #001C48;"  ><a style="color: #001C48;"  href="https://cirt.arizona.edu/?_gl=1*1j3b4h*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMTk4LjQ0LjAuMA..">Emergency Information</a></p>
+      <p style="color: #001C48;"  ><a style="color: #001C48;"  href="https://cirt.arizona.edu/ualert/ualert-services?_gl=1%2A1amjf2h%2A_ga%2AMTEzNzM0NDcwNi4xNzA2MDUwMTEy%2A_ga_7PV3540XS3%2AMTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjI2LjE2LjAuMA..">UAlert</a></p>
+      <p style="color: #001C48;" ><a style="color: #001C48;"  href="https://www.arizona.edu/information-security-privacy?_gl=1*1spajli*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjI4LjE0LjAuMA..">Information Security & Privacy</a></p>
+      <p style="color: #001C48;" ><a style="color: #001C48;"  href="https://www.arizona.edu/campus-accessibility?_gl=1*hjhbgs*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjU1LjYwLjAuMA..">Campus Accessibility</a></p>      
+        </div>
+      </div>
+      
 <script src="interestclient.js"></script>
 
 </body>

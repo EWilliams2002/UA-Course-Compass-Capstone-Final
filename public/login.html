@@ -60,12 +60,17 @@
         #login {
             position: relative;
             top: 155px;
-            left: 375px;
-            width: 40%;
+            left: 320px;
+            width: 50%;
             margin-bottom: 20px;
             text-align: center;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
             margin-bottom: 115px;
+        }
+
+        #disclaimericon {
+            width: 80px;
+            height: 80px;
         }
 
         .acc-style {
@@ -138,15 +143,9 @@
 
         }
 
-        #passwordlogin {
-            position: relative;
-            left: 65px;
-        }
-
         #forgotpassword {
             position: relative;
             color: #a70d26;
-            left: 65px;
             width: 127px;
             height: 19px;
             transition: color 0.05s linear;
@@ -180,40 +179,95 @@
 
     <img id="logoTop" src="SchoolOfInformation.png" alt="School of Information">
 
+    <h2 style="position: relative; top: 110px; left: 90px; width: 400px;">Welcome to UA Course Compass</h2>
+
     <div id="login">
 
         <h1>Login</h1>
 
-        <label class="acc-style" for="emaillogin">Email</label>
+        <form>
+
+            <label class="acc-style" for="emaillogin">Email</label>
+            <br>
+
+            <input type="email" id="emaillogin" pattern="^[A-Za-z0-9]+@arizona\.edu$" title="Must be a school email ( e.g. @arizona.edu )" required=''>
+            <br>
+            <br>
+
+            <label class="acc-style" for="passwordlogin">Password</label>
+            <br>
+
+            <input type="password" id="passwordlogin"  minlength="8" required=''>
+
+            <br>
+            <br>
+            
+            <!-- Replace onclick with function to swap pages to forgotpassword.html -->
+            <a id="forgotpassword">Forgot Password?</a>
+            <br>
+            <br>
+
+            <!-- make login.js file to use onlclick=login() -->
+            <button class="index-btn-style animated-btn" type="button" id="loginButton">Login</button>
+            <br>
+            <br>
+
+            <a id="loginError1" style="display: none; color: red">The password that you have entered is incorrect</a>
+            <a id="loginError2" style="display: none; color: red">The username and/or password you have entered is incorrect</a>
+
+            <h1>Create Account</h1>
+
+            <label class="acc-style" for="emailcreate">Email</label>
+            <br>
+
+            <input type="email" id="emailcreate" pattern="^[A-Za-z0-9]+@arizona\.edu$" title="Must be a school email ( e.g. @arizona.edu )" required=''>
+            <br>
+            <br>
+
+            <label class="acc-style" for="passwordcreate">Password</label>
+            <br>
+
+            <input type="password" id="passwordcreate" minlength="8" required=''>
+            <br>
+            <br>
+            <br>
+
+            <label class="acc-style" for="major">Select Your Major</label>
+            <br>
+            <br>
+
+            <input type="radio" id="emphDs" name="major" required='' value="BS Information Science: Data Science">
+            <label for="emphDs">BS Information Science: Data Science</label><br>
+
+            <input type="radio" id="emphIntTech" name="major" required='' value="BS Information Science: Interactive and Immersicve Technologies">
+            <label for="emphIntTech">BS Information Science: Interactive and Immersicve Technologies</label><br>
+            
+            <br>
+            <br>
+
+            <!-- make login.js file to use onlclick=createAccount() -->
+            <input class="index-btn-style animated-btn" type="submit" id="createAccountButton" value="Create">
+
+            <br>
+            <br>
+            <a id="createError" style="display: none; color: red">The email you have entered is already in use</a>
+            <br>
+
+        </form>
+
+        <br>
+        <br>
         <br>
 
-        <input type="text" id="emaillogin" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" title="Must be an email" required=''>
-        <br>
-        <br>
+        <img id="disclaimericon" src="disclaimer.jpg" alt="ATTENTION">
 
-        <label class="acc-style" for="passwordlogin">Password</label>
-        <br>
+        <h1  style="color: red;">ATTENTION</h1>
 
-        <input type="password" id="passwordlogin" required=''>
-        
-        <!-- Replace onclick with function to swap pages to forgotpassword.html -->
-        <a id="forgotpassword" onclick="switchToForgotPassword()"  >Forgot Password?</a>
-
-        <br>
-        <br>
-
-        <!-- make login.js file to use onlclick=login() -->
-        <button class="index-btn-style animated-btn" type="button" onclick="login()">Login</button>
-
-        <div id="throw-error"></div>
-
-        <br>
-        <br>
-
-        <h1>Create Account</h1>
-
-        <!-- make login.js file to use onlclick=createAccount() -->
-        <button class="index-btn-style animated-btn" type="button" onclick="switchToCreate()">Create</button>
+        <h2>
+            This service does not replace your advisement report and is only for students 
+            who are pursuing a Bachelors of Science in Information Science with either a Data Science or 
+            Interactive & Immersive Technologies Emphasis
+        </h2>
 
     </div>
 

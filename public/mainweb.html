@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UA compass</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-
-  
     body {
       margin: 0;
       padding: 0;
@@ -19,23 +18,32 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
     }
+
 
     .beige-bar {
       background-color: #F5F5DC;
       height: 200px;
-      position: fixed;
+      position: absolute;
       bottom: 0;
       width: 100%;
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding-left: 20px;
     }
 
     .logo {
       height: 30px;
     }
+    #nameLogo {
+            position: relative;
+            left: -40px;
+            top: 8px;
+            width: 300px;
+            height: 35px;
+        
+        }
 
     .school-logo {
       margin-left: 20px;
@@ -44,7 +52,6 @@
 
     .school-logo2 {
       margin-left: 40px;
-      margin-left: 0;
       height: 30px;
     }
 
@@ -54,14 +61,17 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      height: 250px;
+      height: 300px;
+      border-radius: 5px;
     }
+
 
     .square {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 150px;
+      width: 155px;
+      border-radius: 5px;
       height: 100px;
       background-color: #0074CC;
       color: white;
@@ -70,84 +80,119 @@
 
     p {
       margin: 0;
-      color: black;
     }
+
+
 
     .text-bar {
-      position: fixed;
+      position: absolute;
       bottom: 0;
       right: 0;
-      background-color: #F5F5DC;
-      padding: 10px;
       list-style: none;
       margin-right: 20px;
-      color: black;
-      padding: 0;
+      color: #001C48;
       text-align: right;
       font-size: 14px;
-      color: #333;
+      margin-bottom: 10px;
     }
 
-    .logoutButton:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 0;
-        height: 0;
-        background-color: rgba(212, 212, 212, 0.3);
-        opacity: 0;
+
+
+        #top {
+            position: relative;
+            background-color: #8B0015;
+            color: white;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        #nameLogo {
+      position: relative;
+            left: 50px;
+            top: 8px;
+            width: 300px;
+            height: 35px;
+        
+        }
+
+
+    .square_page{
+      background-color: #001C48;
+      border-radius: 5px;
+      font-size: 11px;
+      position: absolute;  
+      top: 22px;
+      right: 145px;
+      text-decoration: none;
     }
 
-    .logoutButton:hover:before {
-        width: 100%;
-        height: 100%;
-        opacity: 1;
-        transition: all 0.2s linear;
+    a:visited {
+      color: inherit; 
+
+    }
+    a{
+      text-decoration: none;
     }
 
-    .logoutButton {
-      position: absolute;
-      right: 50px;
-      top: 127px;
-      text-align: center;
-      background-color: rgba(212, 212, 212, 0.3);
-      border: 2px solid rgba(212, 212, 212, 0.3);
-      border-radius: 10%;
-      display: inline-flex;
-      height: 30px;
-      width: 68px;
+
+    .settings-icon{
+      position: relative;   
+      top: 25px;         
+      right: -60px;       
+      z-index: 999;      
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: white;
       cursor: pointer;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 50%;   
     }
 
-    .buttonText {
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      margin-left: 10px;
-      margin-right: 0;
-      margin-bottom: 0;
-      margin-top: 0;
-      padding: 0;
-      line-height: 1.7;
+    .help-link {
+      position: relative;   
+      top: 3px;
+      right: 50px;
+      font-size: 12px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+
+      white-space: nowrap; 
+
     }
+
+
   </style>
+
 </head>
 <body>
 
-  <div class="red-bar">
-    <img src="ua_wordmark_line_logo_white_rgb.min.svg" alt="UA Logo" class="logo">
-  </div>
+  <div id="top">
+    <img id="nameLogo" src="ua_wordmark_line_logo_white_rgb.min.svg" alt="University of Arizona">
+    <div>
+      <button class="square_page" id="logoutMain" style="color: #dfdee7;">Logout</button>
+      <a href="settings.html" class="fas fa-cog settings-icon"></a>
+      <a href="instructions.html" class="help-link">Need help?</a>
+    </div>
+</div>
+
+
 
   <img src="SchoolOfInformation.png" alt="School of Information Logo" class="school-logo">
 
-  <div class='logoutButton' style="margin: 0; padding: 0;">
-      <p class='buttonText' onclick="logout()">Logout</p>
-  </div>
-
   <br>
   <br>
-  <br>
-  <br>
+  <h2 style="text-align: center; color: #001C48;">Welcome to UA Course Compass</h2>
+  <!-- <p> 
+    <button class="square_page" id="logoutMain" style="margin-left: 40px; color: #dfdee7;">Logout</button>
+  </p> -->
 
   <div class="main-navigation">
     <div class="square"> <a href="fouryearplan.html" style="color: white; text-decoration: none;"> Create a four-year plan </a></div>
@@ -159,18 +204,18 @@
   <div class="beige-bar">
     <img src="SchoolOfInformation2.png" alt="School of Information Logo" class="school-logo2">
     <div class="text-bar">
-      <p>School of Information</p>
-	    <p>1103 E. 2nd St., Rm. 409 (Harvill Building)</p>
-	    <p>P.O. Box 210076</p>
-	    <p>Tucson, Arizona 85721</p>
-	    <p>Contact Us | <a href="mailto:si_info@arizona.edu">si_info@arizona.edu</a> | 520-621-3565</p>
-	    <p>A member of the iSchools consortium.</p>
-	    <p>Emergency Information</p>
-	    <p>UAlert</p>
-	    <p>Information Security & Privacy</p>
-	    <p>Campus Accessibility</p>
+      <p style="color: #001C48;" ><b>School of Information</b></p>
+	    <p style="color: #001C48;"  ><b><a style="color: #001C48;"   href="https://www.google.com/maps/place/1103+E+2nd+St,+Tucson,+AZ+85719/@32.2343702,-110.9569788,17z/data=!3m1!4b1!4m6!3m5!1s0x86d67106f7e51223:0x6b78f9e48ae1775c!8m2!3d32.2343702!4d-110.9544039!16s%2Fg%2F11cslx4d03?entry=tts">1103 E. 2nd St.</a>, Rm. 409</b> (Harvill Building)</p>
+	    <p style="color: #001C48;"  >P.O. Box 210076</p>
+	    <p style="color: #001C48;" >Tucson, Arizona 85721</p>
+	    <p style="color: #001C48;"  ><a style="color: #001C48;"  href="https://ischool.arizona.edu/contact">Contact Us </a>| <a  style="color: #001C48;" href="mailto:si_info@arizona.edu">si_info@arizona.edu</a> | <a  style="color: #001C48;" href="tel:5206213565">520-621-3565</a></p>
+	    <p style="color: #001C48;"  >A member of <a  style="color: #001C48;" href="https://www.ischools.org/">the iSchools consortium</a></p>
+      <p style="color: #001C48;"  ><a style="color: #001C48;"  href="https://cirt.arizona.edu/?_gl=1*1j3b4h*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMTk4LjQ0LjAuMA..">Emergency Information</a></p>
+      <p style="color: #001C48;"  ><a style="color: #001C48;"  href="https://cirt.arizona.edu/ualert/ualert-services?_gl=1%2A1amjf2h%2A_ga%2AMTEzNzM0NDcwNi4xNzA2MDUwMTEy%2A_ga_7PV3540XS3%2AMTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjI2LjE2LjAuMA..">UAlert</a></p>
+      <p style="color: #001C48;" ><a style="color: #001C48;"  href="https://www.arizona.edu/information-security-privacy?_gl=1*1spajli*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjI4LjE0LjAuMA..">Information Security & Privacy</a></p>
+      <p style="color: #001C48;" ><a style="color: #001C48;"  href="https://www.arizona.edu/campus-accessibility?_gl=1*hjhbgs*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjU1LjYwLjAuMA..">Campus Accessibility</a></p>      
     </div>
   </div>
-
+  <script src="logout.js"></script>
 </body>
 </html>

@@ -4,25 +4,124 @@
 <meta charset="UTF-8">
 <title>Course Recommendation</title>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <style>
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      
+      
+  }
 
-body {
-  background-color: white;
-  margin: 0;
-  padding: 0;
-  overflow-y: scroll;
+  .container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 50px;
+  }
+
+  .column {
+      flex: 1;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+      max-height: 400px;
+      max-width: 400px;
+  }
+
+  .scrollable-list {
+      list-style: none;
+      padding: 0;
+  }
+
+  .scrollable-list li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+  }
+
+  .scrollable-list li:last-child {
+      border-bottom: none;
+  }
+
+  .core-area,
+  .emphasis-area,
+  .interactive-area,
+  .computational-area,
+  .society-area,
+  .research-area,
+  .engagement-area{
+      width: 100%;
+      max-width: 450px;
+      margin: 20px auto; 
+      padding: 20px;
+      background-color: #eaf7fa;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .core-title,
+  .emphasis-title,
+  .interactive-title,
+  .computational-title,
+  .society-title,
+  .research-title,
+  .engagement-title{
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #f5f5faf2;
+  }
+
+  .course-list {
+      list-style: none;
+      padding: 0;
+  }
+
+  .course-list li {
+      padding: 5px;
+      border-bottom: 1px solid #ddd;
+  }
+
+  .course-list li:last-child {
+      border-bottom: none;
+  }
+  .school-logo {
+    margin-left: 20px;
+    height: 50px;
 }
 
-#logo1 {
-  position: absolute;
-  top: 70px;
-  margin-left: 85px;
-  width: 245px;
-  height: 44px;
-}
 
-#logo2 {
+
+#bottom_text {
+  text-align: right;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 2.5px; 
+  overflow-wrap: break-word; 
+  color: #001C48;
+  }
+
   
+  #bottom {
+  background-color: beige;
+  position: relative;
+  margin: 0;
+  padding-left: 20px; 
+  padding-right: 20px; 
+  padding-top: 10px;
+  margin-top: 40px;
+  padding-bottom: 10px;
+  width: auto;
+  box-sizing: border-box; 
+}
+
+
+
+  #logo2 { 
   position: absolute;
   width: 198px;
   height: 35.904px;
@@ -30,337 +129,257 @@ body {
   left: 30px;
 }
 
-#topLogo {
-  position: relative;
-  left: 50px;
-  top: 8px;
-  width: 300px;
-  height: 35px;
-}
-
-
-
-#top {
-  position: absolute;
-  background-color: #a70d26;
-  color: white;
-  width: 100%;
-  height: 50px;
-  margin: 0;
-  padding: 0;
-}
-
-#bottom {
-  background-color: beige;
-  position: relative;
-  margin: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 100%;
-  height: 198.59px;
-  bottom: 0%;
-  line-height: 1px;
-}
-
-p {
-  text-align: right;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-#content {
-  display: inline-block;
-  background-color: #4b0f0c00;
-  position: absolute;
-  text-align: center;
-  padding: 0;
-  width: 100%;
-  height: 320px;
-  top: 155px;
-  /* visibility: hidden; */
-}
-
-.area {
+.square_page{
+  background-color: #001C48;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 13px;
   
-  display: inline-block;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  
-}
-.interestTitle {
-  padding: 5px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  width: 90px;
-  height: 40px;
-  text-align: center;
-  line-height: 0px;
-  color: white;
-  margin-left: 160px;
-  background-color: #0C234B;
-  border-radius: 3px;
-}
-.interestClasses {
-  position: relative;
-  text-align: left;
-  font-weight: bold;
-  margin-top: 7px;
-  margin-bottom: 15px;
-  background-color: #61ff3e62;
-  width: 420px;
-  height: 200px;
-  padding: 10px;
-}
-
-#UnivNameLogo {
-  position: absolute;
-  color: white;
-  text-align: left;
-  top: 10px;
-  left: 80px;
-  margin: 0;
-  padding: 0;
-}
-.coreCourses {
-  background-color:#f9ec9f; /* Set the background color to beige */
-  border: 1px solid #ccc; /* Optional: Add a border with a light grey color */
-  padding: 15px; /* Add some padding around the content inside the box */
-  margin-top: 20px; /* Add some space above the box */
-  margin-bottom: 20px; /* Add some space below the box */
-}
-
-.coreCourses h4 {
-  margin-bottom: 10px; /* Add some space below the heading */
-}
-
-.coreCourses ul {
-  list-style-type: none; 
-  padding-left: 0; 
-}
-
-.coreCourses li {
-  padding-bottom: 5px; 
-}
-
-.coreCourses a {
-  color: #00008B; 
-  text-decoration: none;  
-}
-
-.coreCourses a:hover {
-  text-decoration: underline; /* Add an underline on hover for better usability */
-}
-
-#headlineText {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  display: inline-flex;
-  position: relative;
-  left: 110px;
-  top: 130px;
-  width: 250px;
-  text-align: left;
 
 }
-
-.logoutButton:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    background-color: rgba(212, 212, 212, 0.3);
-    opacity: 0;
+a {
+    color: rgba(206, 205, 205, 0.712);
+    text-decoration: none;
 }
 
-.logoutButton:hover:before {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    transition: all 0.2s linear;
-}
+.square_page2{
+      background-color: #001C48;
+      border-radius: 5px;
+      font-size: 10px;
+      position: absolute;  
+      top: 19px;
+      right: 140px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
 
-.logoutButton {
-    position: absolute;
-    right: 50px;
-    top: 127px;
-    text-align: center;
-    background-color: rgba(212, 212, 212, 0.3);
-    border: 2px solid rgba(212, 212, 212, 0.3);
-    border-radius: 10%;
-    display: inline-flex;
-    height: 30px;
-    width: 68px;
-    cursor: pointer;
-}
 
-.buttonText {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin-left: 10px;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0;
-  line-height: 1.7;
-}
-    </style>
+a:visited {
+      color: inherit; 
 
-<body id="body">
+    }
+    a{
+      text-decoration: none;
+      
+    }
 
-    <div id="top" >
-        <img id="topLogo" src="ua_wordmark_line_logo_white_rgb.min.svg" alt="University of Arizona">
 
-    </div>
 
-    <img id="logo1" src="SchoolOfInformation.png" alt="School of Information">
+    .settings-icon{
+      position: absolute;   
+      top: 27px;         
+      right: 20px;       
+      z-index: 999;      
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 50%;   
+    }
 
-    <div id="headlineText">
-      <h3 style="margin: 0;  padding: 0;">
-          Course Recommendation
-      </h3>
-    </div>
+    .help-link {
+      position: absolute;   
+      top: 10px;
+      right: 50px;
+      font-size: 12px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
 
-    <div class='logoutButton' style="margin: 0; padding: 0;">
-        <p class='buttonText' onclick="logout()">Logout</p>
-    </div>
+      white-space: nowrap; 
 
-    <br>
+    }
 
-    <div id="content">
 
-        <div class="area">
 
-            <div class="interestTitle">
-                <h4>Emphasis</h4>
-            </div>
-            <div class="interestClasses" id="divToChange1"></div>
-            
-        </div>
 
-       <div class="area">
 
-            <div class="interestTitle">
-                <h4>Arts</h4>
-            </div>
-            
-            <div class="interestClasses" id="divToChange2"></div>
-            
-        </div>
+</style>
+</head>
+<body>
 
-        <div class="area">
+<div id="top" style="background-color: #8B0015; color: white; width: 100%; height: 50px;">
+<img src="ua_wordmark_line_logo_white_rgb.min.svg" alt="University of Arizona" style="width: 300px; height: 35px; position: relative; left: 50px; top: 8px;">
+<div >
+  <button class="square_page2" id="logoutCourseRec" style="color: white;">Logout</button>
+  <a href="settings.html" style="color: white;" class="fas fa-cog settings-icon"></a>
+  <a href="instructions.html" class="help-link">Need help?</a>
+</div>
+</div>
 
-            <div class="interestTitle">
-                <h4>Society</h4>
-            </div>
-            
-            <div class="interestClasses" id="divToChange3"></div>
-       
-        </div>
+<img src="SchoolOfInformation.png" alt="School of Information Logo" class="school-logo">
 
-        <div class="coreCourses">
-          <h3>Bachelors of Science in Information Science Major Courses</h3>
-          <h4>Core Courses (15 Units)</h4>
-          <ul>
-              <li><a href="https://catalog.arizona.edu/courses/0354901">ISTA 100 - Great Ideas of the Information Age</a></li>
-              <li><a href="https://catalog.arizona.edu/courses/0356451">ISTA 116 - Statistical Foundations for the Information Age</a></li>
-              <li><a href="https://catalog.arizona.edu/courses/0354911">ISTA 130 - Computational Thinking and Doing</a></li>
-              <li><a href="https://catalog.arizona.edu/courses/0364381">ISTA 131 - Dealing with Data</a></li>
-              <li><a href="https://catalog.arizona.edu/courses/0355191">ISTA 161 - Ethics in a Digital World</a></li>
-          </ul>
-          <h4>Emphasis Area: Data Science (15 Units)</h4>
-          <ul>
-          <li><a href="https://catalog.arizona.edu/courses/0389531">ESOC 414 - Computational Social Science</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0376001">ISTA 311 - Foundations of Information and Inference</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0415471">ISTA 320 - Applied Data Visualization</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0368301">ISTA 321 - Data Mining and Discovery</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0405281">ISTA 355 - Introduction to Natural Language Processing</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0356591">ISTA 410 - Bayesian Modeling and Inference</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0361891">ISTA 421 - Introduction to Machine Learning</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0409541">ISTA 322 - Data Engineering</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0399821">ISTA 331 - Principles and Practice of Data Science</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0380541">ISTA 350 - Programming for Informatics Applications</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0364961">ISTA 429 - Applied Cyberinfrastructure Concepts</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0416361">ISTA 431 - Data Warehousing and Analytics in the Cloud</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0198343">ISTA 439 - Statistical Natural Language Processing</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0356461">ISTA 450 - Artificial Intelligence</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0379281">ISTA 455 - Applied Natural Language Processing</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0399091">ISTA 457 - Neural Networks</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0353581">LIS 470 - Database Management and Development</a></li>
-      </ul>
-      <h4>Emphasis Area: Interactive and Immersive technologies (15 Units)</h4>
-      <ul>
-          <li><a href="https://catalog.arizona.edu/courses/0400211">GAME 425 - Algorithms for Games</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0357071">GAME 451 - Game Development</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0380141">ISTA 303 - Introduction to Creative Coding</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0415471">ISTA 320 - Applied Data Visualization</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0406241">ISTA 330 - Advanced Web Design</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0380541">ISTA 350 - Programming for Informatics Applications</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0380351">ISTA 403 - Creative Coding</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0380111">ISTA 416 - Introduction to Human Computer Interaction</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0400221">ISTA 424 - Virtual Reality</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0408271">ISTA 495 - Special Topics in Information Science, Technology, and Arts</a></li>
-      </ul>
-      <h4>Computational Arts and Media (3 Units)</h4>
-      <ul>
-          <li><a href="https://catalog.arizona.edu/courses/0084881">ART 432A - Interactivity</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0146791">ART 437A - Foundation Digital 3D Modeling, Rendering and Rapid Prototyping</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0378211">ESOC 300 - Digital Storytelling and Culture</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0387251">ESOC 340 - Information, Multimedia Design & the Moving Image</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0354921">ISTA 301 - Computing and the Arts</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0375311">ISTA 302 - Technology of Sound</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0380141">ISTA 303 - Introduction to Creative Coding</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0426291">ISTA 329 - Introduction to Web Design and Development</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0366731">ISTA 352 - Images: Past, Present, and Future</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0365401">ISTA 401 - Installation Design</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0380351">ISTA 403 - Creative Coding</a></li>
-      </ul>
-      <h4>Society (3 Units)</h4>
-      <ul>
-          <li><a href="https://catalog.arizona.edu/courses/0378281">ESOC 313 - Digital Discourse and Identity</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0378341">ESOC 314 - Theories of New Media</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0369611">ESOC 315 - Publishing: From Papyrus to E-Book Readers</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0381321">ESOC 316 - Digital Commerce</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0387241">ESOC 317 - Digital Crime and Social Media</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0387831">ESOC 318 - Disruptive Technologies</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0411581">ESOC 319 - Instructional Technologies</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0381331">ESOC 330 - Digital Dilemmas - Privacy, Property and Access</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0389801">ESOC 477 - Information Security</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0399841">ESOC 478 - Science Information and its Presentation</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0387261">ESOC 495 - Special Topics in a Digital and Big Data World</a></li>
-      </ul>
-      <h4>Research Methods (3 Units)</h4>
-      <ul>
-          <li><a href="https://catalog.arizona.edu/courses/0382491">ESOC 302 - Quantitative Methods for the Digital Marketplace</a></li>
-      </ul>
-      <h4>Engagement (6 Units)</h4>
-      <ul>
-          <li><a href="https://catalog.arizona.edu/courses/0385721">ESOC 480 - Digital Engagement</a></li>
-          <li><a href="https://catalog.arizona.edu/courses/0355501">ISTA 498 - Capestone Project</a></li>
-      </ul>
-      </div>
 
-        
+<h3  style=" color: #0C234B; top: 130px; margin-left: 50px; width: 250px; height: 10px;">
+Course Recommendation
+</h3>
+<p style="margin-top: 50px;"> 
+  <a class="square_page" style="margin-left: 50px;  color: #dfdee7;" href="mainweb.html"> Main Page </a> |
+  <a class="square_page" style="color: #dfdee7;" href="fouryearplan.html">Four Year Plan</a> | 
+  <a class="square_page" style="color: #dfdee7;" href="interestsurvey.html">Interest survey</a> | 
+  <a class="square_page" style="color: #dfdee7;" href="resourcelinks.html">Resources Link</a>
+</p>
 
-        <div id="bottom">
-            <img id="logo2" src="SchoolOfInformation.png" alt="School of Information">
+<div class="container">
+<div class="column" id="arts">
+  <h2 style="color: #0C234B;">Emphasis</h2>
+  <ul id="divToChange1" class="scrollable-list"></ul>
+</div>
+<div class="column" id="society">
+  <h2 style="color: #0C234B;" >Arts</h2>
+  <ul id="divToChange2" class="scrollable-list"></ul>
+</div>
+<div class="column" id="emphasis">
+  <h2 style="color: #0C234B;">Society</h2>
+  <ul id="divToChange3" class="scrollable-list"></ul>
+</div>
+</div>
 
-            <p>School of Information</p>
-            <p>1103 E. 2nd St., Rm. 409 (Harvill Building)</p>
-            <p>P.O. Box 210076</p>
-            <p>Tucson, Arizona 85721</p>
-            <p>Contact Us | <a href=“mailto:si_info@arizona.edu”>si_info@arizona.edu</a> | 520-621-3565</p>
-            <p>A member of the iSchools consortium.</p>
-            <p>Emergency Information</p>
-            <p>UAlert</p>
-            <p>Information Security & Privacy</p>
-            <p>Campus Accessibility</p>
-        </div>
+<div style="background-color: #ef4057da;" class="core-area">
+<div class="core-title">Bachelors of Science in Information Science Major Courses <br>Core Courses (15 Units)</div>
+<ul class="course-list">
+  <li><a style="color: rgba(206, 205, 205, 0.712);" href="https://catalog.arizona.edu/courses/0354901">ISTA 100 - Great Ideas of the Information Age</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0356451">ISTA 116 - Statistical Foundations for the Information Age</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0354911">ISTA 130 - Computational Thinking and Doing</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0364381">ISTA 131 - Dealing with Data</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0355191">ISTA 161 - Ethics in a Digital World</a></li>
+</ul>
+</div>
 
-    </div>
+<div style="background-color: #AB0520;" class="emphasis-area">
+<div class="emphasis-title">Emphasis Area: Data Science (15 Units)</div>
+<ul style="color: rgba(206, 205, 205, 0.712);" class="course-list">
+  <li><a  href="https://catalog.arizona.edu/courses/0389531">ESOC 414 - Computational Social Science</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0376001">ISTA 311 - Foundation of Information and Inference</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0415471">ISTA 320 - Applied Data Visualization</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0368301">ISTA 321 - Data Mining and Discovery</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0409541">ISTA 322 - Data Engineering</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0399821">ISTA 331 - Principles and Practice of Data Science</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0380541">ISTA 350 - Programming for Informatics Applications</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0405281">ISTA 355 - Introduction to Natural Language Processing</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0356591">ISTA 410 - Bayesian Modeling and Inference</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0361891">ISTA 421 - Introduction to Machine Learning</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0364961">ISTA 429 - Applied Cyberinfrastructure Concepts</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0416361">ISTA 431 - Data Warehousing and Analytics in the Cloud</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0198343">ISTA 439 - Statistical Natural Language Processing</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0356461">ISTA 450 - Artificial Intelligence</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0379281">ISTA 455 - Applied Natural Language Processing</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0383871">ISTA 456 - Text Retrieval and Web Search</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0399091">ISTA 457 - Neural Networks</a></li>
+  <li><a href="https://catalog.arizona.edu/courses/0353581">LIS  470 - Database Management and Development</a></li>
+
+
+</ul>
+</div>
+
+
+
+
+<div  style="background-color:#8b0015;" class="interactive-area">
+<div class="interactive-title">Emphasis Area: Interactive and Immersive technologies (15 Units) </div>
+<ul class="course-list">
+    <li><a href="https://catalog.arizona.edu/courses/0400211">GAME 425 - Algorithms for Games</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0357071">GAME 451 - Game Development</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0380141">ISTA 303 - Introduction to Creative Coding</a></li>
+    <li><a style="color: rgba(206, 205, 205, 0.712);" href="https://catalog.arizona.edu/courses/0415471">ISTA 320 - Applied Data Visualization</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0406241">ISTA 330 - Advanced Web Design</a></li>
+    <li><a style="color: rgba(206, 205, 205, 0.712);" href="https://catalog.arizona.edu/courses/0380541">ISTA 350 - Programming for Informatics Applications</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0380351">ISTA 403 - Creative Coding</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0380111">ISTA 416 - Introduction to Human Computer Interaction</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0400221">ISTA 424 - Virtual Reality</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0408271">ISTA 495 - Special Topics in Information Science, Technology, and Arts</a></li>
+</ul>
+</div>
+
+
+
+
+<div style="background-color: #0d6e8b;" class="computational-area">
+<div class="computational-title">Computational Arts and Media (3 Units)</div>
+<ul class="course-list">
+    <li><a href="https://catalog.arizona.edu/courses/0084881">ART 432A - Interactivity</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0146791">ART 437A - Foundation Digital 3D Modeling, Rendering and Rapid Prototyping</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0378211">ESOC 300 - Digital Storytelling and Culture</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0387251">ESOC 340 - Information, Multimedia Design & the Moving Image</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0354921">ISTA 301 - Computing and the Arts</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0375311">ISTA 302 - Technology of Sound</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0380141">ISTA 303 - Introduction to Creative Coding</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0426291">ISTA 329 - Introduction to Web Design and Development</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0366731">ISTA 352 - Images: Past, Present, and Future</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0365401">ISTA 401 - Installation Design</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0380351">ISTA 403 - Creative Coding</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div style="background-color: #0c234b;" class="society-area">
+<div class="society-title">Society (3 Units)</div>
+<ul class="course-list">
+    <li><a href="https://catalog.arizona.edu/courses/0378281">ESOC 313 - Digital Discourse and Identity</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0378341">ESOC 314 - Theories of New Media</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0369611">ESOC 315 - Publishing: From Papyrus to E-Book Readers</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0381321">ESOC 316 - Digital Commerce</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0387241">ESOC 317 - Digital Crime and Social Media</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0387831">ESOC 318 - Disruptive Technologies</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0411581">ESOC 319 - Instructional Technologies</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0381331">ESOC 330 - Digital Dilemmas - Privacy, Property and Access</a></li>
+    <li><a style="color: rgba(206, 205, 205, 0.712);" href="https://catalog.arizona.edu/courses/0389801">ESOC 477 - Information Security</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0399841">ESOC 478 - Science Information and its Presentation</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0387261">ESOC 495 - Special Topics in a Digital and Big Data World</a></li>
+</ul>
+</div>
+
+
+
+
+<div style="background-color: #001C48;" class="research-area">
+<div class="research-title">Research Methods (3 Units ) </div>
+<ul class="course-list">
+        <li><a href="https://catalog.arizona.edu/courses/0382491">ESOC 302 - Quantitative Methods for the Digital Marketplace</a></li>
+
+
+</ul>
+</div>
+
+
+<div style="background-color: #020418f2;" class="engagement-area">
+<div class="engagement-title">Engagement (6 Units) </div>
+<ul class="course-list">
+    <li><a href="https://catalog.arizona.edu/courses/0385721">ESOC 480 - Digital Engagement</a></li>
+    <li><a href="https://catalog.arizona.edu/courses/0355501">ISTA 498 - Capestone Project</a></li>
+
+</ul>
+</div>
+
+
+
+<div id="bottom">
+<img id="logo2" src="SchoolOfInformation.png" alt="School of Information">
+<div id="bottom_text">
+  <p><b>School of Information</b></p>
+  <p><b><a style="text-decoration: none;  color: #001C48;" href="https://www.google.com/maps/place/1103+E+2nd+St,+Tucson,+AZ+85719/@32.2343702,-110.9569788,17z/data=!3m1!4b1!4m6!3m5!1s0x86d67106f7e51223:0x6b78f9e48ae1775c!8m2!3d32.2343702!4d-110.9544039!16s%2Fg%2F11cslx4d03?entry=tts">1103 E. 2nd St.</a>, Rm. 409</b> (Harvill Building)</p>
+  <p>P.O. Box 210076</p>
+  <p>Tucson, Arizona 85721</p>
+  <p><a  style="color: #001C48;" href="https://ischool.arizona.edu/contact">Contact Us </a>| <a style="color: #001C48;" href="mailto:si_info@arizona.edu">si_info@arizona.edu</a> | <a  style="color: #001C48;" href="tel:5206213565">520-621-3565</a>
+  </p>
+  <p>A member of <a  style="color: #001C48;" href="https://www.ischools.org/">the iSchools consortium</a></p>
+  <p><a  style="color: #001C48;" href="https://cirt.arizona.edu/?_gl=1*1j3b4h*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMTk4LjQ0LjAuMA..">Emergency Information</a></p>
+  <p><a  style="color: #001C48;" href="https://cirt.arizona.edu/ualert/ualert-services?_gl=1%2A1amjf2h%2A_ga%2AMTEzNzM0NDcwNi4xNzA2MDUwMTEy%2A_ga_7PV3540XS3%2AMTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjI2LjE2LjAuMA..">UAlert</a></p>
+  <p><a  style="color: #001C48;" href="https://www.arizona.edu/information-security-privacy?_gl=1*1spajli*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjI4LjE0LjAuMA..">Information Security & Privacy</a></p>
+  <p><a  style="color: #001C48;"href="https://www.arizona.edu/campus-accessibility?_gl=1*hjhbgs*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjU1LjYwLjAuMA..">Campus Accessibility</a></p>      
+</div>
+</div>
+
+
+
   <script src="courserecclient.js"></script>
-  <script src="login.js"></script>
 </body>
 
 </html>

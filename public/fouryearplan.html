@@ -1,381 +1,863 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title> Create a four-year plan </title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        font-family: Arial, sans-serif;
-        position: relative;
+body {
+  font-family: Arial, sans-serif;
+}
+
+.red-bar {
+    background-color: #8B0015;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.settings-icon{
+      position: relative;   
+      top: 25px;         
+      right: -99px;       
+      z-index: 999;      
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 50%;   
     }
 
-    .red-bar {
-        background-color: #8B0015;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .logo {
-        height: 30px;
-    }
-
-    .school-logo {
-        margin-left: 20px;
-        height: 50px;
-    }
-
-    .school-logo2 {
-        margin-left: 40px;
-        margin-left: 0;
-        height: 30px;
-    }
-
-    .text-main {
-        margin-left: 40px;
-        color: darkblue;
-    }
-
-    p {
-      margin: 0;
-      color: black;
-    }
-    
-	.text-bar {
-	   
-	    bottom: 0;
-	    right: 0;
-      width: 100%;
-	    background-color: #F5F5DC;
-	    padding: 10px;
-	    
-	    color: black;
-	    text-align: right;
-	    font-size: 14px;
-	    color: #333;
-      margin-left: auto;
-	}
-	
-	
-
-	.beige-bar {
-	    background-color: #F5F5DC;
-	    height: 200px;
-	    bottom: 0;
-	    width: 100%;
-	    display: flex;
-	    justify-content: flex-start;
-	    align-items: center;
-	    padding-left: 20px;
-      z-index: 999; 
-
-	}
-	
-	.labeling {
-	    margin-bottom: 120px;
-	    margin-left: 40px;
-	}
 
 
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  width:40%;
-  background-color: #f1f1f1;
+
+.square_page{
+  background-color: #001C48;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 11px;
+  color: #dfdee7;
 }
 
 
-.container {
-      display: flex;
-    }
+.logo {
+    height: 30px;
+}
 
-    .year {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ccc;
-      margin: 10px;
-      min-height: 200px;
-    }
+.school-logo {
+    margin-left: 20px;
+    height: 50px;
+}
 
-    .class-box {
-      background-color: #f0f0f0;
-      padding: 10px;
-      margin: 5px;
-      width : 100px;
-      cursor: move;
-    }
+.school-logo2 {
+    margin-left: 40px;
+    height: 40px;
+}
 
+.text-main {
+    margin-left: 40px;
+    color: rgb(4, 4, 85);
+}
 
-    .box {
+p {
+    margin: 0;
+    color: black;
+}
+
+.labeling {
+    margin-bottom: 120px;
+    margin-left: 40px;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.class-box {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 5px;
+    width: 100px;
+    cursor: move;
+}
+
+.box {
     position: relative;
     display: inline-block;
     margin-right: 20px;
     width: 100px; 
     height: auto;
     background-color: white;
-    border: 1px solid #ccc;
+    border: 1px solid #3cc256;
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 20px;
     cursor: text;
-  }
+}
 
-  .box-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-
-  .box-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-
-
- 
-  .result-box {
+.result-box {
     margin-top: 20px;
-    padding: 10px;
     border: 1px solid #ccc;
-  }
+}
 
-  .remove-item {
+.remove-item {
     cursor: pointer;
     float: right;
-    color: red;
-  }
+    color: rgb(77, 15, 15);
+}
 
-  .left-term {
-    float: left;
-    clear: left;
-    margin-right: 0;
-    margin-left: 300px;
-  }
 
-  .right-term {
-    float: right;
-    clear: right;
-    margin-left: 0;
-    margin-right: 300px;
-  }
-
-  
+#logo2 {
+    position: absolute;
+    width: 198px;
+    height: 35.904px;
+    top: 60px;
+    left: 30px;
+}
 
 
 
+.row{
+    margin-top:50px;
+}
+
+.left-term {
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+#bottom_text {
+    text-align: right;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: normal; 
+    overflow-wrap: break-word; 
+    color: #001C48;
+}
+#bottom {
+    background-color: beige;
+    position: relative;
+    margin: 0;
+    padding-left: 20px; 
+    padding-right: 20px; 
+    color: #001C48;
+    text-decoration: none;
+
+    padding-top: 10px;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    width: auto;
+    box-sizing: border-box; 
+}
+
+a:visited {
+      color: inherit; 
+      
+
+
+    }
+
+
+p{
+  color: #001C48;
+  text-decoration: none;
+
+
+}
+
+.right-term {
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+.col-md-12{
+    height: 100%;
+    align-items: center;
+    margin-right: 500px;
+}
+table {
+    margin-left: 10px;
+    width: 86%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #1c144a;
+    text-align: left;
+    padding: 8px;
+}
+
+a{
+    color: #001C48;
+      text-decoration: none;
+
+}
+
+
+#top {
+            position: relative;
+            background-color: #8B0015;
+            color: white;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+
+        #nameLogo {
+            position: relative;
+            left: -10px;
+            top: 8px;
+            width: 300px;
+            height: 35px;
+        
+        }
+      .square_page2{
+      background-color: #001C48;
+      border-radius: 5px;
+      font-size: 10px;
+      position: absolute;  
+      top: 22px;
+      right: 105px;
+      text-decoration: none;
+    }
+    .n{
+      background-color: #001C48;
+      border-radius: 5px;
+      font-size: 11px;
+      position: absolute;  
+      top: 22px;
+      right: 145px;
+      text-decoration: none;
+    }
+    
+
+    .help-link {
+      position: relative;   
+      top: 3px;
+      right: 10px;
+      font-size: 12px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+
+      white-space: nowrap; 
+
+    }
 </style>
 </head>
 <body>
+<!-- <div class="red-bar">
+  <img src="ua_wordmark_line_logo_white_rgb.min.svg" alt="UA Logo" class="logo">
+  <a href="settings.html" class="fas fa-cog settings-icon"></a>
+  <a href="help.html" class="help-link">Need help?</a>
+</div> -->
 
-<div class="red-bar">
-    <img src="ua_wordmark_line_logo_white_rgb.min.svg" alt="UA Logo" class="logo">
+
+<div id="top">
+  <img id="nameLogo" src="ua_wordmark_line_logo_white_rgb.min.svg" alt="University of Arizona">
+  <div >
+    <button class="square_page2" id="logout" style="color: #dfdee7;">Logout</button>
+    <a href="settings.html" class="fas fa-cog settings-icon"></a>
+    <a href="instructions.html" class="help-link">Need help?</a>
+  </div>
 </div>
+
+
+
 
 <img src="SchoolOfInformation.png" alt="School of Information Logo" class="school-logo">
-<p class="text-main"> Create a four-year plan </p>
-<p class="text-main">Course recommendation | Resources Link</p>
-<!-- 
- <label class="labeling" for="termsDropdown">Select a Term:</label>
-  <select id="termsDropdown" name="terms">
-    <option value="term1">Term 1</option>
-    <option value="term2">Term 2</option>
-    <option value="term3">Term 3</option>
-  </select> -->
 
 
-<!--  8 boxes to represent each year  and button to add another box   + ( add delelt or rest)-->
+<p class="text-main"><b> Create a four-year plan </b> </p>
+<p> 
+  <a class="square_page" style="margin-left: 40px; color: #dfdee7;" href="mainweb.html"> Main Page </a>  |
+  <a class="square_page" style="color: #dfdee7;" href="interestsurvey.html">Interest survey</a> | 
+  <a class="square_page" style="color: #dfdee7;" href="courserecomendation.html">Course recommendation</a> | 
+  <a class="square_page" style="color: #dfdee7;" href="resourcelinks.html">Resources Link</a>   |
+  <button class="square_page" id="save" style="color: #dfdee7;"> Save </button>
+</p>
+<br>
 
 
-<!-- <h2> Four Year Plan</h2> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="left-term">
+        <h2>First semster</h2>
+        <hr style="border-top: 2px solid #701d1d;">
+        <div class="result-box" id="resultBox1">
+ 
+ 
+        </div>
+        <div>
+          <input type="text" class="additionalItem" placeholder="Type here..">
+          <button onclick="addCustomItem('resultBox1')">Add Course</button>
+        </div>
+      </div>
 
-<script>
-  function addCustomItem(resultBoxId) {
-    var additionalItemInput = document.getElementById(resultBoxId).querySelector(".additionalItem");
-    var additionalItemValue = additionalItemInput.value.trim();
-    if (additionalItemValue !== "") {
-      var resultBox = document.getElementById(resultBoxId);
-      resultBox.innerHTML += "<div><span>" + additionalItemValue + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
-      additionalItemInput.value = "";
-    }
-  }
-
-  function removeItem(item) {
-    item.parentNode.removeChild(item);
-  }
-  function addCustomItem(resultBoxId) {
-    var resultBox = document.getElementById(resultBoxId);
-    var additionalItemInput = resultBox.parentNode.querySelector(".additionalItem");
-    var additionalItemValue = additionalItemInput.value.trim();
-    if (additionalItemValue !== "") {
-      resultBox.innerHTML += "<div><span>" + additionalItemValue + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
-      additionalItemInput.value = "";
-    }
-}
-
-</script>
-
-<div class="left-term">
-  <h2>First semster</h2>
-  <hr style="border-top: 2px solid #701d1d;">
-  <div class="result-box" id="resultBox1"></div>
-  <div>
-    <input type="text" class="additionalItem" placeholder="Type here..">
-    <button onclick="addCustomItem('resultBox1')">Add Course</button>
-  </div>
-</div>
-
-<div class="right-term">
-  <h2>Second Semster</h2>
-  <hr style="border-top: 2px solid #701d1d;">
-  <div class="result-box" id="resultBox2"></div>
-  <div>
-    <input type="text" class="additionalItem" placeholder="Type here..">
-    <button onclick="addCustomItem('resultBox2')">Add Course</button>
-  </div>
-</div>
-
-
-<div class="left-term">
-  <h2>Third Semester</h2>
-  <hr style="border-top: 2px solid #701d1d;">
-  <div class="result-box" id="resultBox3"></div>
-  <div>
-    <input type="text" class="additionalItem" placeholder="Type here..">
-    <button onclick="addCustomItem('resultBox3')">Add Course</button>
-  </div>
-</div>
-
-<div class="right-term">
-  <h2>Fourth Semester</h2>
-  <hr style="border-top: 2px solid #701d1d;">
-  <div class="result-box" id="resultBox4"></div>
-  <div>
-    <input type="text" class="additionalItem" placeholder="Type here..">
-    <button onclick="addCustomItem('resultBox4')">Add Course</button>
-  </div>
-</div>
-
-<script>
-  function addCustomItem(resultBoxId) {
-    var resultBox = document.getElementById(resultBoxId);
-    var additionalItemInput = resultBox.parentNode.querySelector(".additionalItem");
-    var additionalItemValue = additionalItemInput.value.trim();
-    if (additionalItemValue !== "") {
-      resultBox.innerHTML += "<div><span>" + additionalItemValue + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
-      additionalItemInput.value = "";
-    }
-  }
-
-  function removeItem(item) {
-    item.parentNode.removeChild(item);
-  }
-</script>
+      <div class="left-term">
+        <h2>Third Semester</h2>
+        <hr style="border-top: 2px solid #701d1d;">
+        <div class="result-box" id="resultBox3"></div>
+        <div>
+          <input type="text" class="additionalItem" placeholder="Type here..">
+          <button onclick="addCustomItem('resultBox3')">Add Course</button>
+        </div>
+      </div>
 
 
 
-<div class="left-term">
-  <h2>Fifth Semester</h2>
-  <hr style="border-top: 2px solid #701d1d;">
-  <div class="result-box" id="resultBox5"></div>
-  <div>
-    <input type="text" class="additionalItem" placeholder="Type here..">
-    <button onclick="addCustomItem('resultBox5')">Add Course</button>
-  </div>
-</div>
-
-<div class="right-term">
-  <h2>Sixth Semester</h2>
-  <hr style="border-top: 2px solid #701d1d;">
-  <div class="result-box" id="resultBox6"></div>
-  <div>
-    <input type="text" class="additionalItem" placeholder="Type here..">
-    <button onclick="addCustomItem('resultBox6')">Add Course</button>
-  </div>
-</div>
-
-<script>
-  function addCustomItem(resultBoxId) {
-    var resultBox = document.getElementById(resultBoxId);
-    var additionalItemInput = resultBox.parentNode.querySelector(".additionalItem");
-    var additionalItemValue = additionalItemInput.value.trim();
-    if (additionalItemValue !== "") {
-      resultBox.innerHTML += "<div><span>" + additionalItemValue + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
-      additionalItemInput.value = "";
-    }
-  }
-
-  function removeItem(item) {
-    item.parentNode.removeChild(item);
-  }
-</script>
-
-
-<div class="left-term">
-  <h2>Seventh Semester</h2>
-  <hr style="border-top: 2px solid #701d1d;">
-  <div class="result-box" id="resultBox7"></div>
-  <div>
-    <input type="text" class="additionalItem" placeholder="Type here..">
-    <button onclick="addCustomItem('resultBox7')">Add Course</button>
-  </div>
-</div>
-
-<div class="right-term">
-  <h2>Eighth Semester</h2>
-  <hr style="border-top: 2px solid #701d1d;">
-  <div class="result-box" id="resultBox8"></div>
-  <div>
-    <input type="text" class="additionalItem" placeholder="Type here..">
-    <button onclick="addCustomItem('resultBox8')">Add Course</button>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-</div>
-
-<script>
-  function addCustomItem(resultBoxId) {
-    var resultBox = document.getElementById(resultBoxId);
-    var additionalItemInput = resultBox.parentNode.querySelector(".additionalItem");
-    var additionalItemValue = additionalItemInput.value.trim();
-    if (additionalItemValue !== "") {
-      resultBox.innerHTML += "<div><span>" + additionalItemValue + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
-      additionalItemInput.value = "";
-    }
-  }
-
-  function removeItem(item) {
-    item.parentNode.removeChild(item);
-  }
-</script>
-
-
-
-  <div class="beige-bar">
-    <img src="SchoolOfInformation2.png" alt="School of Information Logo" class="school-logo2">
-    <div class="text-bar">
-      <p>School of Information</p>
-	    <p>1103 E. 2nd St., Rm. 409 (Harvill Building)</p>
-	    <p>P.O. Box 210076</p>
-	    <p>Tucson, Arizona 85721</p>
-	    <p>Contact Us | <a href="mailto:si_info@arizona.edu">si_info@arizona.edu</a> | 520-621-3565</p>
-	    <p>A member of the iSchools consortium.</p>
-	    <p>Emergency Information</p>
-	    <p>UAlert</p>
-	    <p>Information Security & Privacy</p>
-	    <p>Campus Accessibility</p>
+    <div class="left-term">
+      <h2>Fifth Semester</h2>
+      <hr style="border-top: 2px solid #701d1d;">
+      <div class="result-box" id="resultBox5"></div>
+      <div>
+        <input type="text" class="additionalItem" placeholder="Type here..">
+        <button onclick="addCustomItem('resultBox5')">Add Course</button>
+      </div>
     </div>
+
+
+      <div class="left-term">
+        <h2>Seventh Semester</h2>
+        <hr style="border-top: 2px solid #701d1d;">
+        <div class="result-box" id="resultBox7"></div>
+        <div>
+          <input type="text" class="additionalItem" placeholder="Type here..">
+          <button onclick="addCustomItem('resultBox7')">Add Course</button>
+        </div>
+      </div>
+
+   
+    </div>
+    <div class="col-md-6">
+ 
+ 
+      <div class="right-term">
+        <h2>Second Semster</h2>
+        <hr style="border-top: 2px solid #701d1d;">
+        <div class="result-box" id="resultBox2">
+
+        </div>
+        <div>
+          <input type="text" class="additionalItem" placeholder="Type here..">
+          <button onclick="addCustomItem('resultBox2')">Add Course</button>
+        </div>
+      </div>
+
+      <div class="right-term">
+        <h2>Fourth Semester</h2>
+        <hr style="border-top: 2px solid #701d1d;">
+        <div class="result-box" id="resultBox4"></div>
+        <div>
+          <input type="text" class="additionalItem" placeholder="Type here..">
+          <button onclick="addCustomItem('resultBox4')">Add Course</button>
+        </div>
+      </div>
+
+      <div class="right-term">
+        <h2>Sixth Semester</h2>
+        <hr style="border-top: 2px solid #701d1d;">
+        <div class="result-box" id="resultBox6"></div>
+        <div>
+          <input type="text" class="additionalItem" placeholder="Type here..">
+          <button onclick="addCustomItem('resultBox6')">Add Course</button>
+        </div>
+      </div>
+
+      <div class="right-term">
+        <h2>Eighth Semester</h2>
+        <hr style="border-top: 2px solid #701d1d;">
+        <div class="result-box" id="resultBox8"></div>
+        <div>
+          <input type="text" class="additionalItem" placeholder="Type here..">
+          <button onclick="addCustomItem('resultBox8')">Add Course</button>
+        </div>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col-md-12">
+            <table>
+              <tr>
+                <th style="color: white; background-color: #001C48;">GENERAL EDUCATION  (Example)</th>
+                <th style="background-color: #001C48;" ></th>
+              </tr>
+              <tr>
+                
+                <td style="background-color: #1e5188b3;" class="zg" >Composition (Foundation, complete 1 set)</td>
+                <td style="background-color: #1e5188b3;"  class="zg" >Emphasis Courses (Take 5)</td>
+               
+              </tr>
+              <tr>
+                <td><ul>
+                                    <li>ENGL 101/101A & ENGL 102</li>
+                                    <li>ENGL 107 & 108</li>
+                                    <li>ENGL 109H</li>
+                                </ul></td>
+                <td><ul>
+                                    <li>ESOC 414</li>
+                                    <li>ISTA 311</li>
+                                    <li>ISTA 355</li>
+                                    <li>ISTA 421</li>
+                                    <li>ISTA 455</li>
+                                    <a href="https://ischool.arizona.edu/bs-information-science/curriculum-courses">More Emphasis courses</a>
+                                </ul></td>
+              </tr>
+              <tr>
+                <td style="background-color: #1e5188b3;" class= "zg">Math Foundation</td>
+                <td style="background-color: #1e5188b3;" class= "zg" >Computational Arts & Media (Take 1)</td>
+              </tr>
+              <tr>
+                 <td><ul>
+                                    <li>MATH 113 or 116 or 122A/B or higher</li>
+                                                                        <a href="https://ischool.arizona.edu/bs-information-science/curriculum-courses">More Math Foundation course</a>
+
+                                </ul></td>
+                <td><ul>
+                                    <li>ISTA 301</li>
+                                    <a href="https://ischool.arizona.edu/bs-information-science/curriculum-courses">More Computational Arts & Media</a>
+                                    
+                                </ul></td>
+              </tr>
+              <tr>
+                <td style="background-color: #1e5188b3;" class= "zg">Second Language-2nd Semester Prof. (Foundation)</td>
+                <td style="background-color: #1e5188b3;" class= "zg">Society (Take 1)</td>
+              </tr>
+              <tr>
+                <td><ul>
+                  <li>Spanish 102</li>
+                  <a href="https://clp.arizona.edu/courses/course-languages">More courses</a>
+                  </ul>
+                </td>
+                <td><ul>
+                  <li>ESOC 313</li>
+                  <a href="https://ischool.arizona.edu/bs-information-science/curriculum-courses">More Society courses</a>
+
+                  </ul>
+                </td>
+              </tr>
+              
+              
+               <tr>
+                <td style="background-color: #1e5188b3;" class= "zg">Introduction to GE (Take 1 Course)</td>
+                <td style="background-color: #1e5188b3;" class= "zg">Engagement/Internship/Ind. Study (Take 1)</td>
+              </tr>
+              <tr>
+                <td><ul>
+                  <li>UNIV 101</li>
+                  </ul>
+                </td>
+                <td><ul>
+                  <li>ESOC 480</li>
+                  <a href="https://ischool.arizona.edu/bs-information-science/curriculum-courses">More Engagement courses</a>
+                  </ul>
+                </td>
+              </tr>
+              
+              
+              <tr>
+                <td style="background-color: #1e5188b3;" class= "zg">Artist (Take 1 Course)</td>
+                <td style="background-color: #1e5188b3;" class= "zg">Humanist (Take 1 Course)</td>
+              </tr>
+              <tr>
+                <td><ul>
+                  <li>ART 329</li>
+                  <a href="https://archive.catalog.arizona.edu/faculty/courses/994/artx.html">More Art courses</a>
+                  </ul>
+                </td>
+                <td><ul>
+                  <li>AFAS 160A1</li>
+                  <a href="https://ge.arizona.edu/approved-gened-courses#Humanist">More Humanist courses</a>
+
+                  </ul>
+                </td>
+              </tr>
+              
+              
+              
+              <tr>
+                <td style="background-color: #1e5188b3;" class= "zg">Natural Scientist (Take 1 Course)</td>
+                <td style="background-color: #1e5188b3;" class= "zg">Social Scientist (Take 1 Course)</td>
+              </tr>
+              <tr>
+                <td><ul>
+                  <li>ANTH 160D2</li>
+                  <a href="https://ge.arizona.edu/approved-gened-courses#Natural">More Natural Scientist Courses</a>
+
+                  </ul>
+                </td>
+                <td><ul>
+                  <li>AED 408</li>
+                  <a href="https://ge.arizona.edu/approved-gened-courses#Social">More Social Scientist Courses</a>
+
+                  </ul>
+                </td>
+              </tr>
+              
+              <tr>
+                <td style="background-color: #1e5188b3;"  class= "zg">Building Connections (Take 3 courses)</td>
+                <td style="background-color: #1e5188b3;" class= "zg">GE Capstone Course (Take 1 Course)</td>
+              </tr>
+              <tr>
+                <td><ul>
+                  <li>ACBS 160D1</li>
+                    <li>AED 210</li>
+                  <li>AFAS 335</li>
+                  <a href="https://ge.arizona.edu/approved-gened-courses#BC">More Building Connections Courses</a>
+
+            
+                  </ul>
+                </td>
+                <td><ul>
+                  <li>UNIV 301</li>
+                  </ul>
+                </td>
+              </tr>
+              
+              <tr>
+                <td style="color: white; background-color: #001C48;"  class= "zg">INFORMATION SCIENCE MAJOR (approx. 45 units)</td>
+                <td style="color: white; background-color: #001C48;" class= "zg"></td>
+
+              </tr>
+
+              <tr>
+                <td style="background-color: #1e5188b3;" class= "zg">
+            Core Courses (Take All)</td>
+                <td  style="background-color: #1e5188b3;" class= "zg">Research Methods (Take 1 Course)</td>
+              </tr>
+              <tr>
+                <td><ul>
+                  <li>ISTA 100</li>
+                                    <li>ISTA 116</li>
+                                    <li>ISTA 130</li>
+                                    <li>ISTA 131</li>
+                                    <li>ISTA 161</li>
+            
+                  </ul>
+                </td>
+                <td><ul>
+                  <li>ESOC 302</li>
+                  </ul>
+                </td>
+              </tr>
+              
+              
+              
+              
+              <tr>
+                <td style="background-color: #1e5188b3;" class= "zg">Emphasis Area (Select 1)</td>
+                <td style="background-color: #1e5188b3;" class= "zg">Minor/2nd Major (18-21 Units):</td>
+              </tr>
+              <tr>
+                <td><ul>
+                  <li>Interactive & Immersive Technologies</li>
+                    <li>Data Science</li>
+                  </ul>
+                </td>
+                <td><ul>
+                  <a href="https://archive.catalog.arizona.edu/majors_minors/994/minors.html"> Minor list</a>
+                  <br>
+                  <a href="https://archive.catalog.arizona.edu/majors_minors/994/majors.html"> Major list</a>
+
+                  </ul>
+                </td>
+              </tr>
+              
+              
+              
+              <tr>
+                <td style="background-color: #1e5188b3;" > ELECTIVES (if needed to reach 120 units/42 UD)</td>
+                <td style="background-color: #1e5188b3;">Other Requirements</td>
+              </tr>
+              <tr>
+                <td><ul>
+                  <a href="https://ischool.arizona.edu/undergraduate-programs/courses"> More courses</a>
+
+                  <!-- <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li> -->
+                  
+            
+                  </ul>
+                </td>
+                <td><ul>
+                  <li>Total Units (Minimum 120 units)</li>
+                    <li>Upper Division Units (Minimum 42 units)</li>
+                  <li>General Education Units (Minimum 32 units)</li>
+                  <li>Overall GPA (Minimum 2.0)</li>
+                  <li>Major GPA (Minimum 2.0)</li>
+                <li>Minor GPA (Minimum 2.0)</li>
+                    <li>Residency (Minimum 30 units)</li>
+                    <li>56 University Level Units</li>
+            
+                  </ul>
+                </td>
+              </tr>
+              
+              
+              
+              
+              <tr>
+                <td  style="background-color: #1e5188b3;" class= "zg"> GRADUATION REQUIREMENTS
+            Mid-Career Writing Assessment </td>
+              </tr>
+              <tr>
+                <td><ul>
+                  <li>ENGL 102/108/109H with a grade of “B” or better</li>
+                  <li>ESOC 300, 314 or 315 can also be used to fulfill this requirement
+            with a “B” or better</li>
+                  
+                  
+            
+                  </ul>
+                </td>
+                
+              </tr>
+              
+              
+              
+            </table>
+        </div>
+      </div>
+      
+   
+ 
+</div>
+</div>
+
+
+<div id="bottom">
+  <img id="logo2" src="SchoolOfInformation.png" alt="School of Information">
+  <div id="bottom_text">
+    <p><b>School of Information</b></p>
+    <p><b><a style="text-decoration: none;" href="https://www.google.com/maps/place/1103+E+2nd+St,+Tucson,+AZ+85719/@32.2343702,-110.9569788,17z/data=!3m1!4b1!4m6!3m5!1s0x86d67106f7e51223:0x6b78f9e48ae1775c!8m2!3d32.2343702!4d-110.9544039!16s%2Fg%2F11cslx4d03?entry=tts">1103 E. 2nd St.</a>, Rm. 409</b> (Harvill Building)</p>
+    <p>P.O. Box 210076</p>
+    <p>Tucson, Arizona 85721</p>
+    <p><a href="https://ischool.arizona.edu/contact">Contact Us </a>| <a href="mailto:si_info@arizona.edu">si_info@arizona.edu</a> | <a href="tel:5206213565">520-621-3565</a>
+    </p>
+    <p>A member of <a href="https://www.ischools.org/">the iSchools consortium</a></p>
+    <p><a  href="https://cirt.arizona.edu/?_gl=1*1j3b4h*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMTk4LjQ0LjAuMA..">Emergency Information</a></p>
+    <p><a href="https://cirt.arizona.edu/ualert/ualert-services?_gl=1%2A1amjf2h%2A_ga%2AMTEzNzM0NDcwNi4xNzA2MDUwMTEy%2A_ga_7PV3540XS3%2AMTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjI2LjE2LjAuMA..">UAlert</a></p>
+    <p><a href="https://www.arizona.edu/information-security-privacy?_gl=1*1spajli*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjI4LjE0LjAuMA..">Information Security & Privacy</a></p>
+    <p><a href="https://www.arizona.edu/campus-accessibility?_gl=1*hjhbgs*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjU1LjYwLjAuMA..">Campus Accessibility</a></p>   
   </div>
+</div>
+<script>
+  let sem1 = new Set();
+  let sem2 = new Set();
+  let sem3 = new Set();
+  let sem4 = new Set();
+  let sem5 = new Set();
+  let sem6 = new Set();
+  let sem7 = new Set();
+  let sem8 = new Set();
+  
+  window.onload = function(e){
+      console.log("In Loaded Page");
+      let payload = {message: "Getting Data to Update UI."};
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', '/updatefouryearplanui');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      console.log("Sending from Client");
+      xhr.send(JSON.stringify(payload));
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+          console.log("Loaded four year plan to client");
+          var response = JSON.parse(xhr.responseText);
+          if(response["plansaved"] != 'No plan'){
+            resultArray = response["plansaved"].split(" : ");
+            sem1 = new Set(resultArray[0].split("*"));
+            sem2 = new Set(resultArray[1].split("*"));
+            sem3 = new Set(resultArray[2].split("*"));
+            sem4 = new Set(resultArray[3].split("*"));
+            sem5 = new Set(resultArray[4].split("*"));
+            sem6 = new Set(resultArray[5].split("*"));
+            sem7 = new Set(resultArray[6].split("*"));
+            sem8 = new Set(resultArray[7].split("*"));
+            document.getElementById("resultBox1").innerHTML = buildInner(sem1);
+            document.getElementById("resultBox2").innerHTML = buildInner(sem2);
+            document.getElementById("resultBox3").innerHTML = buildInner(sem3);
+            document.getElementById("resultBox4").innerHTML = buildInner(sem4);
+            document.getElementById("resultBox5").innerHTML = buildInner(sem5);
+            document.getElementById("resultBox6").innerHTML = buildInner(sem6);
+            document.getElementById("resultBox7").innerHTML = buildInner(sem7);
+            document.getElementById("resultBox8").innerHTML = buildInner(sem8);
+
+          };
+      };
+    };
+
+  };
+
+  function buildInner(plannedCourses){
+    buildStr = ""
+    for(const element of plannedCourses){
+      buildStr += "<div><span>" + element + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
+    };
+    return buildStr;
+
+  };
+
+  function addCustomItem(resultBoxId) {
+    var resultBox = document.getElementById(resultBoxId);
+    var additionalItemInput = resultBox.parentNode.querySelector(".additionalItem");
+    var additionalItemValue = additionalItemInput.value.trim();
+    if (additionalItemValue !== "") {
+      if(resultBoxId == "resultBox1"){
+        sem1.add(additionalItemValue);
+
+      }
+      if(resultBoxId == "resultBox2"){
+        sem2.add(additionalItemValue);
+
+      }
+      if(resultBoxId == "resultBox3"){
+        sem3.add(additionalItemValue);
+
+      }
+      if(resultBoxId == "resultBox4"){
+        sem4.add(additionalItemValue);
+
+      }
+      if(resultBoxId == "resultBox5"){
+        sem5.add(additionalItemValue);
+
+      }
+      if(resultBoxId == "resultBox6"){
+        sem6.add(additionalItemValue);
+
+      }
+      if(resultBoxId == "resultBox7"){
+        sem7.add(additionalItemValue);
+
+      }
+      if(resultBoxId == "resultBox8"){
+        sem8.add(additionalItemValue);
+
+      }
+      resultBox.innerHTML += "<div><span>" + additionalItemValue + "</span><span class='remove-item' onclick='removeItem(this.parentNode)'> - </span></div>";
+      additionalItemInput.value = "";
+      //savePlan();
+    }
+  }
+
+  function removeItem(item) {
+    if(item.parentNode.id == "resultBox1"){
+        sem1.delete((item.getElementsByTagName("span")[0]).innerHTML);
+
+    }
+    if(item.parentNode.id == "resultBox2"){
+      sem2.delete((item.getElementsByTagName("span")[0]).innerHTML);
+
+    }
+    if(item.parentNode.id == "resultBox3"){
+      sem3.delete((item.getElementsByTagName("span")[0]).innerHTML);
+
+    }
+    if(item.parentNode.id == "resultBox4"){
+      sem4.delete((item.getElementsByTagName("span")[0]).innerHTML);
+
+    }
+    if(item.parentNode.id == "resultBox5"){
+      sem5.delete((item.getElementsByTagName("span")[0]).innerHTML);
+
+    }
+    if(item.parentNode.id == "resultBox6"){
+      sem6.delete((item.getElementsByTagName("span")[0]).innerHTML);
+
+    }
+    if(item.parentNode.id == "resultBox7"){
+      sem7.delete((item.getElementsByTagName("span")[0]).innerHTML);
+
+    }
+    if(item.parentNode.id == "resultBox8"){
+      sem8.delete((item.getElementsByTagName("span")[0]).innerHTML);
+
+    }
+    item.parentNode.removeChild(item);
+    //savePlan();
+  }
+  document.getElementById("logout").onclick = function logoutUser(){
+    //Sending login info to server
+    savePlan();
+    let payload = {logout: "Logging out user"};
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/logout');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(payload));
+    xhr.onreadystatechange = function(){
+    if(xhr.readyState == 4 && xhr.status == 200){
+        var response = JSON.parse(xhr.responseText);
+        window.location.replace("login.html");
+    };
+    };
+  };
+  document.getElementById("save").onclick = function saveCurrentPlan(){
+    //Sending and Receiving to Server
+    let array1 = Array.from(sem1);
+    let array2 = Array.from(sem2);
+    let array3 = Array.from(sem3);
+    let array4 = Array.from(sem4);
+    let array5 = Array.from(sem5);
+    let array6 = Array.from(sem6);
+    let array7 = Array.from(sem7);
+    let array8 = Array.from(sem8);
+    let planStr = array1.join("*") + " : "+array2.join("*") + " : "+array3.join("*") + " : "+array4.join("*") + " : "+array5.join("*") + " : "+array6.join("*") + " : "+array7.join("*") + " : "+array8.join("*");
+    let payload = {fouryearplan: planStr};
+    console.log(planStr);
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/savefouryearplan');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify(payload));
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+        var response = JSON.parse(xhr.responseText);
+      };
+    };
+  }
+
+  function savePlan(){
+    //Sending and Receiving to Server
+    let array1 = Array.from(sem1);
+    let array2 = Array.from(sem2);
+    let array3 = Array.from(sem3);
+    let array4 = Array.from(sem4);
+    let array5 = Array.from(sem5);
+    let array6 = Array.from(sem6);
+    let array7 = Array.from(sem7);
+    let array8 = Array.from(sem8);
+    let planStr = array1.join("*") + " : "+array2.join("*") + " : "+array3.join("*") + " : "+array4.join("*") + " : "+array5.join("*") + " : "+array6.join("*") + " : "+array7.join("*") + " : "+array8.join("*");
+    let payload = {fouryearplan: planStr};
+    console.log(planStr);
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/savefouryearplan');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify(payload));
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+        var response = JSON.parse(xhr.responseText);
+      };
+    };
+  }
+
+</script>
+
+
+
 </body>
 </html>

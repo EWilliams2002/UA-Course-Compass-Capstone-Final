@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <head>
 
     <meta charset="UTF-8" />
     <title>Instructions</title>
-
     <style>
 
         body {
@@ -14,6 +14,28 @@
             font-family: Arial, sans-serif;
 
         }
+
+
+    a:visited {
+      color: inherit; 
+
+    }
+        a{
+            text-decoration: none;
+        }
+
+
+    .text-bar {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      list-style: none;
+      margin-right: 20px;
+      color: #001C48;
+      text-align: right;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
 
         #top {
             top: 0px;
@@ -62,6 +84,7 @@
             top: 125px;
             left: 90px;
             width: 80%;
+            margin-top: -170px;
             margin-bottom: 20px;
             text-align: left;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -85,6 +108,20 @@
             margin-top: 5px;
             margin-bottom: 5px;
             width: 850px;
+        }
+
+        #instructionssample6 {
+            position: relative;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 850px;
+        }
+
+        #instructionssample7 {
+            position: relative;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 95%;
         }
 
         #bottom {
@@ -117,93 +154,119 @@
             padding-left: 10px;
             
         }
-
-        #headlineText {
-            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-            display: inline-flex;
-            position: relative;
-            left: 110px;
-            top: 130px;
-            width: 400px;
-            text-align: left;
-
+        .square_page{
+            background-color: #001C48;
+            border-radius: 5px;
+            font-size: 11px;
+            top: 22px;
+            right: 145px;
+            text-decoration: none;
+            align-items: left;
+            border-radius: 5px;
         }
 
-        .logoutButton:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 0;
-            height: 0;
-            background-color: rgba(212, 212, 212, 0.3);
-            opacity: 0;
+        .square_page{
+            background-color: #001C48;
+            border-radius: 5px;
+            font-size: 11px;
+            position: absolute;  
+            background-color: #001C48;
+            padding: 4px;
+            margin-top: 146px;
+            text-decoration: none;
         }
 
-        .logoutButton:hover:before {
-            width: 100%;
-            height: 100%;
-            opacity: 1;
-            transition: all 0.2s linear;
-        }
 
-        .logoutButton {
-            position: absolute;
-            right: 50px;
-            top: 127px;
-            text-align: center;
-            background-color: rgba(212, 212, 212, 0.3);
-            border: 2px solid rgba(212, 212, 212, 0.3);
-            border-radius: 10%;
-            display: inline-flex;
-            height: 30px;
-            width: 68px;
-            cursor: pointer;
-        }
+    .text-main-title{
+        font-size: 24px;
+        margin-top: 130px;
+        margin-left: 90px;
+        color:#0C234B
+        
+    }
 
-        .buttonText {
-            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-            margin-left: 10px;
-            margin-right: 0;
-            margin-bottom: 0;
-            margin-top: 0;
-            padding: 0;
-            line-height: 1.7;
-        }
+    .top_title{
+        margin-top: 100px;
+        display:inline-flex;
+
+        align-items: left;
+    }
+    .square_page2{
+      background-color: #001C48;
+      border-radius: 5px;
+      font-size: 10px;
+      position: absolute;  
+      top: 22px;
+      right: 150px;
+      text-decoration: none;
+    }
+
+
+    .settings-icon{
+      position: absolute;   
+      top: 30px;         
+      right: 35px;       
+      z-index: 999;      
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 50%;   
+    }
+
+    .help-link {
+      position: absolute;   
+      top: 15px;
+      right: 60px;
+      font-size: 12px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+
+      white-space: nowrap; 
+
+    }
+
+
+
 
     </style>
 
 </head>
 
-<body id="body">
+<body>
 
     <div id="top" >
         <img id="nameLogo" src="ua_wordmark_line_logo_white_rgb.min.svg" alt="University of Arizona">
-
+        <img id="logoTop" src="SchoolOfInformation.png" alt="School of Information">
+        <div>
+            <button class="square_page2" id="logoutInstructions" style="color: #dfdee7;">Logout</button>
+            <a href="settings.html" class="fas fa-cog settings-icon"></a>
+            <a href="instructions.html" class="help-link">Need help?</a>
+          </div>
     </div>
 
-    <img id="logoTop" src="SchoolOfInformation.png" alt="School of Information">
 
-    <div id="headlineText">
-        <h2 style="margin: 0;  padding: 0;">
-            Welcome to UA Course Compass
-        </h2>
+  
+    <p class="text-main-title" ><b> Create a four-year plan </b> </p>
+
+    <div class="top_title">
+        <a class="square_page" style="margin-right: 1145px; color: #dfdee7;" href="mainweb.html"> Main Page </a>  
+        <a class="square_page" style="margin-right: 1060px; color: #dfdee7;" href="fouryearplan.html"> Four Year Plan </a>  
+        <a class="square_page" style="margin-right: 973px; color: #dfdee7;" href="interestsurvey.html"> Interest Survey </a> 
+        <a class="square_page" style="margin-right: 845px; color: #dfdee7;" href="courserecomendation.html"> Course Recomendation  </a>  
+        <a class="square_page" style="margin-right: 755px; color: #dfdee7;" href="resourcelinks.html"> Resource Links </a>
     </div>
 
-    <div class='logoutButton' style="margin: 0; padding: 0;">
-        <p class='buttonText' onclick="logout()">Logout</p>
-    </div>
-
-    <br>
-    <br>
-    <br>
 
     <div id="instructions">
 
         <a>
-            This site well help you plan out your four year academic career at the University of Arizona
-
+            This tool will help you plan out your four year academic career at the University of Arizona
         </a>
 
         <br>
@@ -244,6 +307,20 @@
         <img id="instructionssample3" src="instructionssample3.png" alt="Sample course planner node">
 
         <br>
+        
+
+        <a>
+            In the interest survey, you must first select your current major empahsis. Once done, you'll be able to give a repsonse to the rest 
+            of the questions.
+        </a>
+
+        <br>
+        <br>
+        <br>
+
+        <img id="instructionssample6" src="instructionssample6.png" alt="Rest of interest survey">
+
+        <br>
         <br>
         <br>
 
@@ -256,10 +333,28 @@
         <br>
         <br>
 
+        <img id="instructionssample6" src="instructions_8.png" alt="Course Recs">
+
+        <br>
+        <br>
+        <br>
+
         <a>
             Once you've chosen what classes you want to take, it's time to put them in your planner. After you've made your way to the
             course planner tab, you can choose to add any class to one of the semesters.
         </a>
+
+        <br>
+        <br>
+        <br>
+        <a>
+            Make sure to click the save button to save your progress!
+        </a>
+        <br>
+        <br>
+        <br>
+
+        <img id="instructionssample7" src="instructionssample7.png" alt="4 Year Planner">
 
         <br>
         <br>
@@ -279,33 +374,29 @@
         <br>
         <br>
 
-        <a>
-            You can also delete a course by clicking the red dash that shows up when you add a class to the list
-        </a>
-
+        <p>
+            Our Resource Center is crafted to support and enhance your undergraduate experience, our Resource Center offers a simple guide on how to navigate and utilize the diverse resources available.
+        </p>
+        <p>
+            To access information, simply click on the container corresponding to the topic you are interested in. This action will direct you to a dedicated page filled with all the relevant details and resources.
+        </p>
         <br>
         <br>
         <br>
 
-        <img id="instructionssample1" src="instructionssample4.png" alt="Deleting course">
+        <img id="instructionssample7" src="instructions_9.png" alt="Resources">
 
         <br>
         <br>
         <br>
-
-        <a>
-            Additionally, you can click on Resource Links for helpful references as well as instructions on how to use D2L and UAccess
-        </a>
-
+        <img id="instructionssample8" src="instructions_10.png" alt="Emails">
+        <p> Our website sends a reminder of the important dates to make sure that you are on the right track in your academic journey. You can opt in or opt out in settings.</p>
         <br>
         <br>
         <br>
-
-        <img id="instructionssample1" src="instructionssample5.png" alt="Resource Links">
-
-        <br>
-        <br>
-        <br>
+        <p>
+            Make the most of our Resource Center to enrich your educational journey!
+        </p>
 
     </div>
 
@@ -313,19 +404,43 @@
 
     <div id="bottom">
         <img id="logoBottom" src="SchoolOfInformation.png" alt="School of Information">
-
-        <p class="footerText">School of Information</p>
-        <p class="footerText">1103 E. 2nd St., Rm. 409 (Harvill Building)</p>
-        <p class="footerText">P.O. Box 210076</p>
-        <p class="footerText">Tucson, Arizona 85721</p>
-        <p class="footerText">Contact Us | <a href=“mailto:si_info@arizona.edu”>si_info@arizona.edu</a> | 520-621-3565</p>
-        <p class="footerText">A member of the iSchools consortium.</p>
-        <p class="footerText">Emergency Information</p>
-        <p class="footerText">UAlert</p>
-        <p class="footerText">Information Security & Privacy</p>
-        <p class="footerText">Campus Accessibility</p>
+        <div class="text-bar">
+            <p style="color: #001C48;" ><b>School of Information</b></p>
+            <p style="color: #001C48;"  ><b><a style="color: #001C48;"   href="https://www.google.com/maps/place/1103+E+2nd+St,+Tucson,+AZ+85719/@32.2343702,-110.9569788,17z/data=!3m1!4b1!4m6!3m5!1s0x86d67106f7e51223:0x6b78f9e48ae1775c!8m2!3d32.2343702!4d-110.9544039!16s%2Fg%2F11cslx4d03?entry=tts">1103 E. 2nd St.</a>, Rm. 409</b> (Harvill Building)</p>
+            <p style="color: #001C48;"  >P.O. Box 210076</p>
+            <p style="color: #001C48;" >Tucson, Arizona 85721</p>
+            <p style="color: #001C48;"  ><a style="color: #001C48;"  href="https://ischool.arizona.edu/contact">Contact Us </a>| <a  style="color: #001C48;" href="mailto:si_info@arizona.edu">si_info@arizona.edu</a> | <a  style="color: #001C48;" href="tel:5206213565">520-621-3565</a></p>
+            <p style="color: #001C48;"  >A member of <a  style="color: #001C48;" href="https://www.ischools.org/">the iSchools consortium</a></p>
+          <p style="color: #001C48;"  ><a style="color: #001C48;"  href="https://cirt.arizona.edu/?_gl=1*1j3b4h*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMTk4LjQ0LjAuMA..">Emergency Information</a></p>
+          <p style="color: #001C48;"  ><a style="color: #001C48;"  href="https://cirt.arizona.edu/ualert/ualert-services?_gl=1%2A1amjf2h%2A_ga%2AMTEzNzM0NDcwNi4xNzA2MDUwMTEy%2A_ga_7PV3540XS3%2AMTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjI2LjE2LjAuMA..">UAlert</a></p>
+          <p style="color: #001C48;" ><a style="color: #001C48;"  href="https://www.arizona.edu/information-security-privacy?_gl=1*1spajli*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjI4LjE0LjAuMA..">Information Security & Privacy</a></p>
+          <p style="color: #001C48;" ><a style="color: #001C48;"  href="https://www.arizona.edu/campus-accessibility?_gl=1*hjhbgs*_ga*MTEzNzM0NDcwNi4xNzA2MDUwMTEy*_ga_7PV3540XS3*MTcxMzk4OTA2Mi4xNDYuMS4xNzEzOTkwMjU1LjYwLjAuMA..">Campus Accessibility</a></p>      
+          </div>
     </div>
+    
 
 </body>
+<script>
+    document.getElementById("logoutInstructions").onclick = function logoutUser(){
+        //Sending login info to server
+        let payload = {logout: "Logging out user"};
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', '/logout');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        console.log(payload);
+        console.log("Sending from Client");
+        xhr.send(JSON.stringify(payload));
+        xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            console.log("Loggout User");
+            var response = JSON.parse(xhr.responseText);
+            console.log(response["test"]);
+            console.log("Worked!");
+            window.location.replace("login.html");
+        };
+        };
+      };
+    
+    </script>
 
 </html>
